@@ -83,7 +83,7 @@ else:
     # PostgreSQL pour le développement et la production
     DATABASES = {
         'default': dj_database_url.config(
-            default='postgres://ues1tocivmho2n:p9b05ce595732d7f433fab47137efef3e7377a5f39c181088bfe62caeb099b0ce@c3l5o0rb2a6o4l.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com:5432/d6ujtf8li6r3j8')
+            default='postgres://udtoec5qvgkvov:pfbffa946dcaac51c48d8348c2a2202ed5bab6349b69d768c14435a7b38a2700e@c3l5o0rb2a6o4l.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com:5432/d2jsh660l1ju2e')
 
         
     }
