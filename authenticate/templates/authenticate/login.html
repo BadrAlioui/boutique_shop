@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% block content %}
+<h2 class="text-center">Login</h2>
+<form method="POST" action="">
+    {% csrf_token %}
+    <div class="col-md-6 offset-md-3">
+        <div class="form-group">
+            <label for="exampleInputEmail1" class="form-label">Username</label>
+            <input
+                type="text"
+                class="form-control"
+                placeholder="Enter Username"
+                name="username"
+            />
+            <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1" class="form-label"
+                >Password</label
+            >
+            <input
+                type="password"
+                class="form-control"
+                placeholder="Enter password"
+                name="password"
+            />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+    </div>
+</form>
+
+{% endblock %}
