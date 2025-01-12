@@ -24,15 +24,7 @@ body {
     box-sizing: border-box;
 }
 
-.account-form .form-group, .contact-form .form-group {
-    margin-bottom: 15px;
-    width: 100%;
-    padding: 10px;
-    font-size: 1em;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
+
 
 .account-form label, .contact-form label {
     display: block;

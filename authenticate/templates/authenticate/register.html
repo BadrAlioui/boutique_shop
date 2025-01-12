@@ -2,12 +2,12 @@
 <h2 class="text-center">register</h2>
 <form method="POST" action="{% url 'register' %}" class="account-form my-4">
     {% csrf_token %}
-    <div class="col-md-6 offset-md-3">
+    
         {% if form.error %}
         <p>Your form has Errors...</p>
         {% endif %} {{form.as_p}}
         <input type="submit" value="Register" class="btn btn-secondary" />
-    </div>
+    
     
 </form>
 {% endblock %}
