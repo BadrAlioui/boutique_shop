@@ -123,8 +123,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = '/static/'
+
+# Chemin absolu où collecter les fichiers statiques (utilisé pour le déploiement)
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Liste des répertoires où Django cherchera les fichiers statiques
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
