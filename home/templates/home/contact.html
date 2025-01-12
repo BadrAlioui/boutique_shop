@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% load widget_tweaks %} {% block content %}
 <div class="contact-page mb-5">
     <h1 class="text-center">Contact Us</h1>
-    <form action="{% url 'contact' %}" method="POST">
+    <form action="{% url 'contact' %}" method="POST" class="contact-form">
         {% csrf_token %}
         <div class="form-group">
             <label for="id_name">Name:</label>

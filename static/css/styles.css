@@ -10,7 +10,7 @@ body {
 }
 
 
-form {
+.account-form, .contact-form {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 30px;
     border-radius: 15px;
@@ -24,17 +24,8 @@ form {
     box-sizing: border-box;
 }
 
-.form-group {
+.account-form .form-group, .contact-form .form-group {
     margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.form-control {
     width: 100%;
     padding: 10px;
     font-size: 1em;
@@ -42,3 +33,10 @@ label {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
+
+.account-form label, .contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
