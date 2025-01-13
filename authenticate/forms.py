@@ -4,7 +4,10 @@ from django import forms
 
 
 class EditProfileForm(UserChangeForm):
-
+    password = forms.CharField(
+        widget=forms.TextInput(attrs={"class": "form-control", "type": "hidden"}),
+        max_length=150,
+    )
     class Meta:
         model = User
         fields = ('username', 'first_name', 'last_name', 'email')

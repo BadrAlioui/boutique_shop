@@ -22,7 +22,7 @@ def login_user(request):
             return redirect('home')
         else:
             messages.error(request, "Invalid username or password.")
-            return redirect('login_page')
+            return redirect('login')
     return render(request, 'authenticate/login.html')
 
 # Déconnexion utilisateur
