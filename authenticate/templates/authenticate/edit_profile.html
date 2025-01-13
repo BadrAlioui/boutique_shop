@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="text-center">Edit Profile</h2>
+<form method="POST" action="{% url 'edit_profile' %}" class="account-form my-4">
+    {% csrf_token %}
+    
+    {% if edit_form.errors %}
+        <p class="text-danger">Your form has errors. Please correct them below.</p>
+    {% endif %}
+    
+    {{ edit_form.as_p }}
+    <input type="submit" value="Save Changes" class="btn btn-secondary" />
+</form>
+{% endblock %}
