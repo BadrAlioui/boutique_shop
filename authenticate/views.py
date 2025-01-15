@@ -22,8 +22,9 @@ def login_user(request):
             return redirect('home')
         else:
             messages.error(request, "Invalid username or password.")
-            return redirect('login')
+            return render(request, 'authenticate/login.html') 
     return render(request, 'authenticate/login.html')
+
 
 # Déconnexion utilisateur
 def logout_user(request):
@@ -43,12 +44,16 @@ def register_user(request):
             if user is not None:
                 login(request, user)
                 messages.success(request, "Your account has been created successfully!")
+                print("Redirection effectuée vers 'home'")
                 return redirect('home')
         else:
+            print("Formulaire invalide :", form.errors)
             messages.error(request, "There was an error in your registration. Please try again.")
     else:
         form = SignUpForm()
-    return render(request, 'authenticate/register.html', {'form': form})  
+    return render(request, 'authenticate/register.html', {'form': form})
+
+  
 
 
 # Modification du profil utilisateur
@@ -58,12 +63,15 @@ def edit_profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Your profile has been updated successfully!")
+            print("Redirection effectuée vers 'home'")
             return redirect('home')
         else:
+            print("Formulaire invalide :", form.errors)
             messages.error(request, "There was an error updating your profile. Please try again.")
     else:
         form = EditProfileForm(instance=request.user)
     return render(request, 'authenticate/edit_profile.html', {'edit_form': form})
+
 
 
 def change_password(request):
