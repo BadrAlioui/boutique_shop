@@ -11,5 +11,8 @@
     
     {{ edit_form.as_p }}
     <input type="submit" value="Save Changes" class="btn btn-secondary" />
+
+    <p class="text-center"><a href="{% url 'change_password' %}">Clique here to change your password</a></p>
+
 </form>
 {% endblock %}
