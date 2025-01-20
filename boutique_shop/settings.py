@@ -1,33 +1,18 @@
 from pathlib import Path
 import os
-import django_heroku
-from decouple import config
-import dj_database_url
-import sys
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-#https://www.youtube.com/watch?v=fQo9ivqX4xs
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
+# Build paths inside the project
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
+# Security
 SECRET_KEY = 'django-insecure-$)=e9m%v0kpkf@21=1o-d3im#ut*jokfcc=q#7-f3%vt3fgo96'
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = ['*']
 
-
-# Application definition
-
+# Installed apps
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,6 +26,7 @@ INSTALLED_APPS = [
     'store',
 ]
 
+# Middleware
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -52,8 +38,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'boutique_essai.urls'
+ROOT_URLCONF = 'boutique_shop.urls'
 
+# Templates
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -71,99 +58,50 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'boutique_essai.wsgi.application'
-
+WSGI_APPLICATION = 'boutique_shop.wsgi.application'
 
 # Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
-# Configuration de la base de données
-if 'test' in sys.argv:
-    # Utilisation de SQLite pour les tests
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': ':memory:',
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
-else:
-    # PostgreSQL pour le développement et la production
-    DATABASES = {
-        'default': dj_database_url.config(
-            default='postgres://udtoec5qvgkvov:pfbffa946dcaac51c48d8348c2a2202ed5bab6349b69d768c14435a7b38a2700e@c3l5o0rb2a6o4l.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com:5432/d2jsh660l1ju2e')
-    }
-
+}
 
 # Password validation
-# https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
-
 
 # Internationalization
-# https://docs.djangoproject.com/en/5.1/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.1/howto/static-files/
-
+# Static and media files
 STATIC_URL = '/static/'
-
-# Chemin absolu où collecter les fichiers statiques (utilisé pour le déploiement)
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-# Liste des répertoires où Django cherchera les fichiers statiques
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
-
+STATICFILES_DIRS = [BASE_DIR / 'static']
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-
+# Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'studentinstitute2024@gmail.com'
-EMAIL_HOST_PASSWORD = 'fmve ttzx tcjx luec'  # Utilise un mot de passe d'application
+EMAIL_HOST_PASSWORD = 'fmve ttzx tcjx luec'
 DEFAULT_FROM_EMAIL = 'studentinstitute2024@gmail.com'
-
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-django_heroku.settings(locals())
-
-
-# Cloudinary -Django integration
-
+# Cloudinary
 cloudinary.config(
-    cloud_name = "dbi9dhanq",
-    api_key = "778114457955977",
-    api_secret = "GytK3sofNmLZxc3ma8w8rZ-gTDk",
-
-
+    cloud_name="dbi9dhanq",
+    api_key="778114457955977",
+    api_secret="GytK3sofNmLZxc3ma8w8rZ-gTDk",
 )

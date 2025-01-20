@@ -1,0 +1,212 @@
+[
+    {
+        "model": "store.product",
+        "pk": 1,
+        "fields": {
+            "category": 3,
+            "title": "Basic White T-Shirt",
+            "brand": "H&M",
+            "description": "A comfortable and simple white t-shirt made from organic cotton.",
+            "slug": "basic-white-t-shirt",
+            "rating": 4.5,
+            "price": 12.99,
+            "image": "https://res.cloudinary.com/dbi9dhanq/image/upload/v1737106287/s47siqhtgymoc30d46ad.jpg",
+            "stock": 50
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 2,
+        "fields": {
+            "category": 3,
+            "title": "Graphic Black T-Shirt",
+            "brand": "Zara",
+            "description": "Stylish black t-shirt with unique graphic print.",
+            "slug": "graphic-black-t-shirt",
+            "rating": 4.7,
+            "price": 15.99,
+            "image": "https://res.cloudinary.com/dbi9dhanq/image/upload/v1737044371/iljfx3e2inv1j51urfng.jpg",
+            "stock": 30
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 3,
+        "fields": {
+            "category": 4,
+            "title": "Slim Fit Jeans",
+            "brand": "Levi's",
+            "description": "Classic slim-fit jeans with a modern cut.",
+            "slug": "slim-fit-jeans",
+            "rating": 4.8,
+            "price": 49.99,
+            "image": "https://res.cloudinary.com/dbi9dhanq/image/upload/v1737044448/qlbo8fz5yjkfv4iikxbm.jpg",
+            "stock": 40
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 4,
+        "fields": {
+            "category": 4,
+            "title": "Chinos",
+            "brand": "Uniqlo",
+            "description": "Comfortable chinos for everyday wear.",
+            "slug": "chinos",
+            "rating": 4.6,
+            "price": 39.99,
+            "image": "https://res.cloudinary.com/dbi9dhanq/image/upload/v1737044329/ogbfik0xepsmcw3irkn0.jpg",
+            "stock": 25
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 5,
+        "fields": {
+            "category": 3,
+            "title": "V-Neck T-Shirt",
+            "brand": "H&M",
+            "description": "A classic v-neck t-shirt for women, made from soft fabric.",
+            "slug": "v-neck-t-shirt",
+            "rating": 4.3,
+            "price": 10.99,
+            "image": "https://res.cloudinary.com/dbi9dhanq/image/upload/v1737106498/xv83bma1tp8okcuoyqvy.jpg",
+            "stock": 60
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 6,
+        "fields": {
+            "category": 3,
+            "title": "Crop Top",
+            "brand": "Zara",
+            "description": "Trendy crop top for a stylish look.",
+            "slug": "crop-top",
+            "rating": 4.5,
+            "price": 14.99,
+            "image": "https://res.cloudinary.com/dbi9dhanq/image/upload/v1737044225/ezpmi9qf2yfdgtxyinev.jpg",
+            "stock": 35
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 7,
+        "fields": {
+            "category": 4,
+            "title": "Skinny Jeans",
+            "brand": "Levi's",
+            "description": "Comfortable skinny jeans with a flattering fit.",
+            "slug": "skinny-jeans",
+            "rating": 4.7,
+            "price": 44.99,
+            "image": "https://res.cloudinary.com/dbi9dhanq/image/upload/v1737044132/trjm5gckrhvhacmazadv.jpg",
+            "stock": 50
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 8,
+        "fields": {
+            "category": 4,
+            "title": "High-Waist Pants",
+            "brand": "Uniqlo",
+            "description": "High-waist pants perfect for work or casual wear.",
+            "slug": "high-waist-pants",
+            "rating": 4.6,
+            "price": 42.99,
+            "image": "https://res.cloudinary.com/dbi9dhanq/image/upload/v1737044475/l04yzhpadzrxveodzxsl.jpg",
+            "stock": 30
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 9,
+        "fields": {
+            "category": 3,
+            "title": "Oversized White T-Shirt",
+            "brand": "Adidas",
+            "description": "An oversized white t-shirt with a modern design for ultimate comfort.",
+            "slug": "oversized-white-t-shirt",
+            "rating": 4.4,
+            "price": 18.99,
+            "image": "https://res.cloudinary.com/dbi9dhanq/image/upload/v1737109150/bvlbwabdxifaxyx6wo5w.jpg",
+            "stock": 45
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 10,
+        "fields": {
+            "category": 3,
+            "title": "Classic Polo Shirt",
+            "brand": "Ralph Lauren",
+            "description": "A premium polo shirt for casual and semi-formal occasions.",
+            "slug": "classic-polo-shirt",
+            "rating": 4.8,
+            "price": 35.99,
+            "image": "https://res.cloudinary.com/dbi9dhanq/image/upload/v1737108628/op827p2kh9inkotvsvwa.jpg",
+            "stock": 20
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 11,
+        "fields": {
+            "category": 3,
+            "title": "Striped T-Shirt",
+            "brand": "Gap",
+            "description": "A stylish striped t-shirt made from breathable cotton fabric.",
+            "slug": "striped-t-shirt",
+            "rating": 4.3,
+            "price": 14.99,
+            "image": "https://res.cloudinary.com/dbi9dhanq/image/upload/v1737108606/iaqxxo6pk6vppld4yucp.jpg",
+            "stock": 40
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 12,
+        "fields": {
+            "category": 4,
+            "title": "Relaxed Fit Pants",
+            "brand": "H&M",
+            "description": "Comfortable relaxed-fit pants for all-day wear.",
+            "slug": "relaxed-fit-pants",
+            "rating": 4.6,
+            "price": 39.99,
+            "image": "https://res.cloudinary.com/dbi9dhanq/image/upload/v1737108583/xp7si4wfmobbrk7x6bsx.jpg",
+            "stock": 35
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 13,
+        "fields": {
+            "category": 4,
+            "title": "Cargo Pants",
+            "brand": "Zara",
+            "description": "Trendy cargo pants with multiple pockets and a comfortable fit.",
+            "slug": "cargo-pants",
+            "rating": 4.7,
+            "price": 49.99,
+            "image": "https://res.cloudinary.com/dbi9dhanq/image/upload/v1737108564/usmnrui0mr2f2fzirz3p.jpg",
+            "stock": 25
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 14,
+        "fields": {
+            "category": 4,
+            "title": "Jogger Pants",
+            "brand": "Nike",
+            "description": "Lightweight jogger pants perfect for casual outings and workouts.",
+            "slug": "jogger-pants",
+            "rating": 4.5,
+            "price": 29.99,
+            "image": "https://res.cloudinary.com/dbi9dhanq/image/upload/v1737108538/ybjujtbt2zgbnl5e4vkv.jpg",
+            "stock": 50
+        }
+    }
+]

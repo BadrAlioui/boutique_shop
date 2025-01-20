@@ -55,3 +55,32 @@ body {
     font-weight: bold;
     margin-bottom: 5px;
 }
+
+.card {
+    height: 650px; /* Fixe une hauteur uniforme pour toutes les cartes */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Répartit le contenu verticalement */
+    margin-bottom: 20px;
+}
+
+.card-body {
+    flex-grow: 1; /* Permet au contenu de remplir l'espace disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.card-img-top {
+    width: 100%; /* Assure que l'image occupe toute la largeur de la carte */
+    height: 400px; /* Fixe une hauteur pour uniformiser les images */
+    object-fit: cover; /* Coupe l'image pour qu'elle s'adapte à la taille définie */
+    border-radius: 5px 5px 0 0; /* Donne un arrondi aux coins supérieurs */
+}
+
+.card-footer {
+    text-align: center;
+    margin-top: auto; /* Garde les boutons au bas de la carte */
+}
+
