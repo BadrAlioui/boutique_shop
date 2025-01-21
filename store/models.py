@@ -48,7 +48,7 @@ class Product(models.Model):
 
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    product = models.TextField()
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     reference = models.CharField(max_length=128)
     date = models.DateTimeField(blank=True, null=True)
     status = models.CharField(max_length=255, default="Created")
@@ -56,6 +56,9 @@ class Order(models.Model):
     
 
     def __str__(self):
-        return f"Order by {self.user.username} - Status: {self.status}"
+        user_str = self.user.username if self.user else "Unknown User"
+        product_str = self.product.title if self.product else "Unknown Product"
+        return f"Order by {user_str} for {product_str} - Status: {self.status}"
+
 
     

@@ -1,0 +1,53 @@
+from django.core.exceptions import ValidationError
+from store.models import Category, Product, Order
+from django.test import TestCase
+from django.contrib.auth.models import User
+
+
+class TestModels(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(username='testuser', password='testpass')
+        self.category = Category.objects.create(name='test category')
+        self.product = Product.objects.create(
+            category=self.category, 
+            title='test product', 
+            description='test description',
+            price=10.00, 
+            stock=10
+        )
+        self.order = Order.objects.create(
+            user=self.user, 
+            product=self.product,  # Use the Product instance
+            reference='test reference', 
+            price=10.00
+        )
+
+
+
+
+    def test_in_stock(self):
+        self.assertTrue(self.product.in_stock)
+        self.product.stock = 0
+        self.assertFalse(self.product.in_stock)
+        self.product.stock = -1
+        with self.assertRaises(ValidationError):
+            self.product.clean()
+
+
+    def test_category_model(self):
+        self.assertEqual(str(self.category), 'test category')
+
+    def test_product_model(self):
+        self.assertEqual(str(self.product), 'test product')
+        self.assertTrue(self.product.in_stock)
+        self.product.stock = 0
+        self.assertFalse(self.product.in_stock)
+        self.product.stock = -1
+        with self.assertRaises(ValidationError):
+            self.product.clean()
+
+    def test_order_model(self):
+        self.assertEqual(self.order.product, self.product)
+        self.assertEqual(self.order.user, self.user)
+        self.assertEqual(str(self.order), f"Order by testuser for test product - Status: Created")
+
