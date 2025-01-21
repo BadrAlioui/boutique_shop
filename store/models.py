@@ -3,6 +3,7 @@ from django.conf import settings
 from django.core.validators import MinValueValidator
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.core.exceptions import ValidationError
 
 class Category(models.Model):
     name = models.CharField(max_length=200, db_index=True)
@@ -31,6 +32,18 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
+
+
+    @property
+    def in_stock(self) -> bool:
+        return self.stock > 0
+
+    
+    def clean(self):
+        if self.stock < 0:
+            raise ValidationError("Stock cannot be negative")
+        if self.price < 0:
+            raise ValidationError("Price cannot be negative")
 
 
 class Order(models.Model):
