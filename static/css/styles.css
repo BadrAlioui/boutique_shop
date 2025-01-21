@@ -84,3 +84,12 @@ body {
     margin-top: auto; /* Garde les boutons au bas de la carte */
 }
 
+.icon a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.icon a:hover {
+    color: #ddd;
+}
+
