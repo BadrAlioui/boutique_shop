@@ -165,51 +165,58 @@ def process_payment(request, slug):
     product = get_object_or_404(Product, slug=slug)
     user = request.user
 
-    if not user.email:
-        messages.error(request, "You need a valid email address to proceed with the payment.")
-        return redirect('product_detail', product_id=product.id)
+    if request.method == "POST":
+        size = request.POST.get('size')  # Récupère la taille choisie depuis le formulaire
 
-    pre_transaction = uuid.uuid4().hex[:6]
+        if size not in ['S', 'M', 'L', 'XL']:
+            messages.error(request, "Invalid size selected.")
+            return redirect('product_detail', product_id=product.id)
 
-    order = Order(
-        user=user,
-        product=product,
-        reference=pre_transaction,
-        date=datetime.now(),
-        status="Created",
-        price=product.price,
-    )
-    order.save()
+        pre_transaction = uuid.uuid4().hex[:6]
 
-    session = stripe.checkout.Session.create(
-        payment_method_types=['card'],
-        customer_email=user.email,
-        line_items=[
-            {
-                'price_data': {
-                    'currency': 'eur',
-                    'unit_amount': int(product.price * 100),
-                    'product_data': {
-                        'name': product.title,
-                        'description': product.description,
-                        'images': [request.build_absolute_uri(product.image.url)] if product.image else [],
+        order = Order(
+            user=user,
+            product=product,
+            size=size,  # Ajout de la taille à la commande
+            reference=pre_transaction,
+            date=datetime.now(),
+            status="Created",
+            price=product.price,
+        )
+        order.save()
+
+        session = stripe.checkout.Session.create(
+            payment_method_types=['card'],
+            customer_email=user.email,
+            line_items=[
+                {
+                    'price_data': {
+                        'currency': 'eur',
+                        'unit_amount': int(product.price * 100),
+                        'product_data': {
+                            'name': f"{product.title} ({size})",  # Ajout de la taille au titre
+                            'description': product.description,
+                            'images': [request.build_absolute_uri(product.image.url)] if product.image else [],
+                        },
                     },
-                },
-                'quantity': 1,
-            }
-        ],
-        mode='payment',
-        metadata={
-            'order_id': order.reference,
-        },
-        success_url=request.build_absolute_uri(reverse('success', args=[pre_transaction])),
-        cancel_url=request.build_absolute_uri(reverse('cancel', args=[pre_transaction])),
-    )
+                    'quantity': 1,
+                }
+            ],
+            mode='payment',
+            metadata={
+                'order_id': order.reference,
+            },
+            success_url=request.build_absolute_uri(reverse('success', args=[pre_transaction])),
+            cancel_url=request.build_absolute_uri(reverse('cancel', args=[pre_transaction])),
+        )
 
-    request.session['product'] = product.slug
-    request.session['order'] = order.reference
+        request.session['product'] = product.slug
+        request.session['order'] = order.reference
 
-    return redirect(session.url)
+        return redirect(session.url)
+
+    return render(request, 'store/product_detail.html', {'product': product})
+
 
 
 @csrf_exempt

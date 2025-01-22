@@ -47,18 +47,26 @@ class Product(models.Model):
 
 
 class Order(models.Model):
+    SIZE_CHOICES = [
+        ('S', 'Small'),
+        ('M', 'Medium'),
+        ('L', 'Large'),
+        ('XL', 'Extra Large'),
+    ]
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    size = models.CharField(max_length=2, choices=SIZE_CHOICES, default='M')
     reference = models.CharField(max_length=128)
     date = models.DateTimeField(blank=True, null=True)
     status = models.CharField(max_length=255, default="Created")
     price = models.FloatField(default=0.0, blank=True)
-    
 
     def __str__(self):
         user_str = self.user.username if self.user else "Unknown User"
         product_str = self.product.title if self.product else "Unknown Product"
-        return f"Order by {user_str} for {product_str} - Status: {self.status}"
+        return f"Order by {user_str} for {product_str} ({self.get_size_display()}) - Status: {self.status}"
+
 
 
     
