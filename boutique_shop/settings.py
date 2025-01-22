@@ -1,8 +1,12 @@
 from pathlib import Path
 import os
+from decouple import config, Csv
+import dj_database_url
+import django_heroku
 import cloudinary
 import cloudinary.uploader
-import cloudinary.api
+import cloudinary
+import stripe
 
 # Build paths inside the project
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -10,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Security
 SECRET_KEY = 'django-insecure-$)=e9m%v0kpkf@21=1o-d3im#ut*jokfcc=q#7-f3%vt3fgo96'
 DEBUG = False
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'boutique-shop-9cbda2d44e62.herokuapp.com']
 
 # Installed apps
 INSTALLED_APPS = [
@@ -99,9 +103,23 @@ DEFAULT_FROM_EMAIL = 'studentinstitute2024@gmail.com'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+# Chargez les clés Stripe depuis les variables d'environnement
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
+STRIPE_PUBLISHABLE_KEY = config('STRIPE_PUBLISHABLE_KEY')
+
+# Configurez Stripe avec la clé secrète
+stripe.api_key = STRIPE_SECRET_KEY
+
+# STRIPE_WEBHOOK_SECRET = config('STRIPE_WEBHOOK_SECRET')
+
 # Cloudinary
 cloudinary.config(
     cloud_name="dbi9dhanq",
     api_key="778114457955977",
     api_secret="GytK3sofNmLZxc3ma8w8rZ-gTDk",
 )
+
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())

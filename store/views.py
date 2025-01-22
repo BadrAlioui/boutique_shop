@@ -5,15 +5,15 @@ from django.db.models import Q
 from .models import Product, Category, Order
 from .forms import ProductForm
 from django.contrib.auth.decorators import user_passes_test, login_required
-# from datetime import datetime
-# from django.views.decorators.csrf import csrf_exempt
-# from django.db.models.functions import Lower
-# import stripe
-# import uuid
-# import json
+from datetime import datetime
+from django.views.decorators.csrf import csrf_exempt
+from django.db.models.functions import Lower
+import stripe
+import uuid
+import json
 
-# # Configuration de la clé Stripe
-# stripe.api_key = "votre_clé_secrète"  
+# Configuration de la clé Stripe
+stripe.api_key = "votre_clé_secrète"  
 
 
 def admin_required(user):
@@ -129,108 +129,108 @@ def delete_product(request, product_id):
     return render(request, template, context)
 
 
-# def payment_success(request, reference):
-#     """Vue pour afficher le succès du paiement"""
-#     product_slug = request.session.get('product')
-#     product = get_object_or_404(Product, slug=product_slug)
-#     order_reference = request.session.get('order')
-#     order = get_object_or_404(Order, reference=order_reference)
+def payment_success(request, reference):
+    """Vue pour afficher le succès du paiement"""
+    product_slug = request.session.get('product')
+    product = get_object_or_404(Product, slug=product_slug)
+    order_reference = request.session.get('order')
+    order = get_object_or_404(Order, reference=order_reference)
 
-#     order.status = "Paid"
-#     order.save()
+    order.status = "Paid"
+    order.save()
 
-#     del request.session['product']
-#     del request.session['order']
+    del request.session['product']
+    del request.session['order']
 
-#     messages.success(request, "Payment successful!")
-#     return redirect('product_detail', product_id=product.id)
-
-
-# def payment_cancel(request, reference):
-#     """Vue pour afficher l'annulation du paiement"""
-#     order_reference = request.session.get('order')
-#     order = get_object_or_404(Order, reference=order_reference)
-#     order.status = "Cancelled"
-#     order.save()
-
-#     request.session.pop('order')
-#     messages.error(request, "Payment cancelled!")
-#     return redirect('products')
+    messages.success(request, "Payment successful!")
+    return redirect('product_detail', product_id=product.id)
 
 
-# @login_required(login_url='/accounts/login/')
-# def process_payment(request, slug):
-#     """Vue pour traiter le paiement avec Stripe"""
-#     stripe.api_key = settings.STRIPE_SECRET_KEY
-#     product = get_object_or_404(Product, slug=slug)
-#     user = request.user
+def payment_cancel(request, reference):
+    """Vue pour afficher l'annulation du paiement"""
+    order_reference = request.session.get('order')
+    order = get_object_or_404(Order, reference=order_reference)
+    order.status = "Cancelled"
+    order.save()
 
-#     if not user.email:
-#         messages.error(request, "You need a valid email address to proceed with the payment.")
-#         return redirect('product_detail', product_id=product.id)
-
-#     pre_transaction = uuid.uuid4().hex[:6]
-
-#     order = Order(
-#         user=user,
-#         product=product.title,
-#         reference=pre_transaction,
-#         date=datetime.now(),
-#         status="Created",
-#         price=product.price,
-#     )
-#     order.save()
-
-#     session = stripe.checkout.Session.create(
-#         payment_method_types=['card'],
-#         customer_email=user.email,
-#         line_items=[
-#             {
-#                 'price_data': {
-#                     'currency': 'eur',
-#                     'unit_amount': int(product.price * 100),
-#                     'product_data': {
-#                         'name': product.title,
-#                         'description': product.description,
-#                         'images': [request.build_absolute_uri(product.image.url)] if product.image else [],
-#                     },
-#                 },
-#                 'quantity': 1,
-#             }
-#         ],
-#         mode='payment',
-#         metadata={
-#             'order_id': order.reference,
-#         },
-#         success_url=request.build_absolute_uri(reverse('success', args=[pre_transaction])),
-#         cancel_url=request.build_absolute_uri(reverse('cancel', args=[pre_transaction])),
-#     )
-
-#     request.session['product'] = product.slug
-#     request.session['order'] = order.reference
-
-#     return redirect(session.url)
+    request.session.pop('order')
+    messages.error(request, "Payment cancelled!")
+    return redirect('products')
 
 
-# @csrf_exempt
-# def stripe_webhook(request):
-#     """Webhook Stripe pour mettre à jour le statut des commandes"""
-#     payload = request.body
-#     event = None
+@login_required(login_url='/accounts/login/')
+def process_payment(request, slug):
+    """Vue pour traiter le paiement avec Stripe"""
+    stripe.api_key = settings.STRIPE_SECRET_KEY
+    product = get_object_or_404(Product, slug=slug)
+    user = request.user
 
-#     try:
-#         event = stripe.Event.construct_from(json.loads(payload), stripe.api_key)
-#     except ValueError:
-#         return HttpResponse(status=400)
+    if not user.email:
+        messages.error(request, "You need a valid email address to proceed with the payment.")
+        return redirect('product_detail', product_id=product.id)
 
-#     if event.type == 'checkout.session.completed':
-#         session = event['data']['object']
-#         order_id = session.get('metadata')['order_id']
-#         try:
-#             order = Order.objects.get(reference=order_id)
-#         except Order.DoesNotExist:
-#             return HttpResponse(status=404)
-#         order.status = "Paid"
-#         order.save()
+    pre_transaction = uuid.uuid4().hex[:6]
 
-#     return HttpResponse(status=200)
+    order = Order(
+        user=user,
+        product=product.title,
+        reference=pre_transaction,
+        date=datetime.now(),
+        status="Created",
+        price=product.price,
+    )
+    order.save()
+
+    session = stripe.checkout.Session.create(
+        payment_method_types=['card'],
+        customer_email=user.email,
+        line_items=[
+            {
+                'price_data': {
+                    'currency': 'eur',
+                    'unit_amount': int(product.price * 100),
+                    'product_data': {
+                        'name': product.title,
+                        'description': product.description,
+                        'images': [request.build_absolute_uri(product.image.url)] if product.image else [],
+                    },
+                },
+                'quantity': 1,
+            }
+        ],
+        mode='payment',
+        metadata={
+            'order_id': order.reference,
+        },
+        success_url=request.build_absolute_uri(reverse('success', args=[pre_transaction])),
+        cancel_url=request.build_absolute_uri(reverse('cancel', args=[pre_transaction])),
+    )
+
+    request.session['product'] = product.slug
+    request.session['order'] = order.reference
+
+    return redirect(session.url)
+
+
+@csrf_exempt
+def stripe_webhook(request):
+    """Webhook Stripe pour mettre à jour le statut des commandes"""
+    payload = request.body
+    event = None
+
+    try:
+        event = stripe.Event.construct_from(json.loads(payload), stripe.api_key)
+    except ValueError:
+        return HttpResponse(status=400)
+
+    if event.type == 'checkout.session.completed':
+        session = event['data']['object']
+        order_id = session.get('metadata')['order_id']
+        try:
+            order = Order.objects.get(reference=order_id)
+        except Order.DoesNotExist:
+            return HttpResponse(status=404)
+        order.status = "Paid"
+        order.save()
+
+    return HttpResponse(status=200)
