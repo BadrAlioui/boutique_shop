@@ -5,13 +5,15 @@ from decouple import config
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+import stripe
+
 
 # Build paths inside the project
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Security
 SECRET_KEY = config('SECRET_KEY')
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 # Installed apps
@@ -84,11 +86,26 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static and media files
+# Static files (CSS, JavaScript, etc.)
+
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  
+]
+
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+# Media files (uploaded by users)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -107,3 +124,10 @@ cloudinary.config(
     api_key="778114457955977",
     api_secret="GytK3sofNmLZxc3ma8w8rZ-gTDk",
 )
+
+# Chargez les clés Stripe depuis les variables d'environnement
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
+STRIPE_PUBLISHABLE_KEY = config('STRIPE_PUBLISHABLE_KEY')
+
+# Configurez Stripe avec la clé secrète
+stripe.api_key = STRIPE_SECRET_KEY
