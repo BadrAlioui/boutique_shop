@@ -62,19 +62,19 @@ def register_user(request):
 
 # Modification du profil utilisateur
 def edit_profile(request):
+    profile = Profile.objects.get(user=request.user)
     if request.method == "POST":
-        form = EditProfileForm(request.POST, instance=request.user)
+        form = EditProfileForm(request.POST, instance=profile, user=request.user)
         if form.is_valid():
             form.save()
             messages.success(request, "Your profile has been updated successfully!")
-            print("Redirection effectuée vers 'home'")
             return redirect('home')
         else:
-            print("Formulaire invalide :", form.errors)
             messages.error(request, "There was an error updating your profile. Please try again.")
     else:
-        form = EditProfileForm(instance=request.user)
+        form = EditProfileForm(instance=profile, user=request.user)
     return render(request, 'authenticate/edit_profile.html', {'edit_form': form})
+
 
 
 
