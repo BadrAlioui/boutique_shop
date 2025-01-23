@@ -92,7 +92,12 @@ class SignUpForm(UserCreationForm):
 
     def save(self, commit=True):
         user = super().save(commit=commit)
-        Profile.objects.create(user=user, address=self.cleaned_data['address'])
+        # Vérifier si un profil existe déjà
+        profile, created = Profile.objects.get_or_create(user=user)
+        profile.address = self.cleaned_data['address']  # Met à jour l'adresse
+        if commit:
+            profile.save()
         return user
+
 
 
