@@ -1,12 +1,20 @@
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
 from django import forms
+from .models import Profile
 
 
-class EditProfileForm(UserChangeForm):
+
+class EditProfileForm(forms.ModelForm):
     class Meta:
-        model = User
-        fields = ('username', 'first_name', 'last_name', 'email')  
+        model = Profile
+        fields = ('address',)  # Inclure seulement les champs que vous voulez modifier
+        widgets = {
+            'address': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Enter your address'
+            }),
+        }
 
 
 
@@ -27,6 +35,13 @@ class SignUpForm(UserCreationForm):
         max_length=150,
         widget=forms.TextInput(attrs={"class": "form-control", "placeholder": "Enter your last name"})
     )
+
+    address = forms.CharField(
+        max_length=255,
+        required=False,
+        widget=forms.TextInput(attrs={"class": "form-control", "placeholder": "Enter your address"})
+    )
+
     password1 = forms.CharField(
         widget=forms.PasswordInput(attrs={"class": "form-control", "placeholder": "Enter your password"})
     )
@@ -36,4 +51,11 @@ class SignUpForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2',)
+        fields = ('username', 'first_name', 'last_name', 'email', 'address', 'password1', 'password2',)
+
+    def clean_address(self):
+        address = self.cleaned_data.get('address')
+        if len(address) < 5:
+            raise forms.ValidationError("The address must be at least 5 characters long.")
+        return address
+

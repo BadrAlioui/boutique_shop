@@ -4,6 +4,8 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm, Password
 from django.contrib import messages
 from django.contrib.auth.models import User
 from .forms import SignUpForm, EditProfileForm
+from .models import Profile
+
 
 # Page d'authentification de base
 def auth_view(request):
@@ -39,6 +41,8 @@ def register_user(request):
         if form.is_valid():
             user = form.save()
             username = form.cleaned_data['username']
+            address = form.cleaned_data['address']
+            Profile.objects.filter(user=user).update(address=address)
             raw_password = form.cleaned_data['password1']
             user = authenticate(username=username, password=raw_password)
             if user is not None:
