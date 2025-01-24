@@ -34,6 +34,13 @@ body {
     padding: 0;
 }
 
+main .container-delete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 .account-form,
 .contact-form {
     background-color: rgba(255, 255, 255, 0.8);

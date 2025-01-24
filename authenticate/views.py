@@ -77,6 +77,15 @@ def edit_profile(request):
 
 
 
+def delete_account(request):
+    if request.method == "POST":
+        user = request.user
+        user.delete()
+        messages.success(request, "Your account has been deleted successfully.")
+        return redirect('home')  # Redirigez vers la page d'accueil ou une autre page
+
+    return render(request, 'authenticate/delete_account.html')
+
 
 def change_password(request):
     if request.method == "POST":
