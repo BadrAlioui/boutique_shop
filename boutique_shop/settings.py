@@ -64,13 +64,25 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'boutique_shop.wsgi.application'
 
-# Database
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+import sys
+
+
+# Configuration de la base de données
+if 'test' in sys.argv:
+    # Utilisation de SQLite pour les tests
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': ':memory:',
+        }
     }
-}
+else:
+    # PostgreSQL pour le développement et la production
+    DATABASES = {
+        'default': dj_database_url.config(
+            default='postgres://ufrjvk79j09l3n:p6c1a74398574cb29777c1e89f3177846f6f957963a68c18e2a5132652b1cda6f@c3l5o0rb2a6o4l.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com:5432/df086d19upfc33'
+        )
+    }
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
