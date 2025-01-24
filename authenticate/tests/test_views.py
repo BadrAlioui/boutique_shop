@@ -125,3 +125,22 @@ class TestViews(TestCase):
         })
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'authenticate/change_password.html')
+
+    def test_delete_account_view_GET(self):
+        self.client.login(username='testuser', password='testpass')
+        response = self.client.get(reverse('delete_account'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'authenticate/delete_account.html')
+
+    def test_delete_account_view_POST(self):
+        self.client.login(username='testuser', password='testpass')
+        response = self.client.post(reverse('delete_account'))
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse('home'))
+        self.assertFalse(User.objects.filter(username='testuser').exists())
+
+    def test_my_profile_view_GET(self):
+        self.client.login(username='testuser', password='testpass')
+        response = self.client.get(reverse('my_profile'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'authenticate/my_profile.html')
