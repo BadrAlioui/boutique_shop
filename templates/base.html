@@ -114,13 +114,14 @@
                                             Product Management
                                         </a>
                                     </li>
+                                    {% if user.is_authenticated %}
                                     <li>
                                         <a class="dropdown-item" href="{% url 'my_profile' %}">
                                             My Profile
                                         </a>
                                     </li>
 
-                                    {% if user.is_authenticated %}
+                                    
                                     <li>
                                         <a
                                             class="dropdown-item"
