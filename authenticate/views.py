@@ -92,3 +92,10 @@ def change_password(request):
         form = PasswordChangeForm(user=request.user)
     return render(request, 'authenticate/change_password.html', {'edit_form': form})
 
+
+
+def my_profile(request):
+    profile = Profile.objects.get(user=request.user)  # Récupérer le profil associé à l'utilisateur connecté
+    return render(request, 'authenticate/my_profile.html', {'profile': profile})
+
+
