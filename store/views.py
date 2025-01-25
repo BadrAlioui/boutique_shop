@@ -70,8 +70,8 @@ def all_products(request):
 
     return render(request, 'store/products.html', context)
 
-def product_detail(request, product_id):
-    product = get_object_or_404(Product, pk=product_id)
+def product_detail(request, slug):
+    product = get_object_or_404(Product, slug=slug)
     context = {
         'product': product,
     }
@@ -97,8 +97,8 @@ def add_product(request):
 
 
 @user_passes_test(lambda user: user.is_superuser)
-def update_product(request, product_id):
-    product = get_object_or_404(Product, pk=product_id)
+def update_product(request, slug):
+    product = get_object_or_404(Product, slug=slug)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
@@ -116,9 +116,9 @@ def update_product(request, product_id):
 
 
 @user_passes_test(lambda user: user.is_superuser)
-def delete_product(request, product_id):
+def delete_product(request, slug):
     """Vue pour supprimer un produit"""
-    product = get_object_or_404(Product, pk=product_id)
+    product = get_object_or_404(Product, slug=slug)
     if request.method == 'POST':
         product.delete()
         messages.success(request, 'Product deleted successfully')

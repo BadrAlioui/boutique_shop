@@ -16,7 +16,7 @@ class Category(models.Model):
         return self.name
 
 class Product(models.Model):
-    category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE, null=True)
+    category = models.ManyToManyField(Category, related_name='products')
     title = models.CharField(max_length=250)
     brand = models.CharField(max_length=250, default='un-branded')
     description = models.TextField()
