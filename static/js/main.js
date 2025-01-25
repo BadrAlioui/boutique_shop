@@ -4,12 +4,15 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl);
 });
 
-// to refresh the paeg
 document.addEventListener("DOMContentLoaded", function () {
-  const alertContainer = document.querySelector(".container.mt-3.text-white");
-  if (alertContainer) {      
-      setTimeout(function () {
-          location.reload();
-      }, 4000); 
-  }
+  const closeButtons = document.querySelectorAll(".alert .btn-close");
+  
+  closeButtons.forEach(button => {
+    button.addEventListener("click", function () {
+      // Rafraîchir la page après un court délai
+      setTimeout(() => {
+        location.reload();
+      }, 500); // 500ms pour laisser le temps au message de disparaître
+    });
+  });
 });
