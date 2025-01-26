@@ -58,6 +58,11 @@ body {
     margin-bottom: 5px;
 }
 
+.text-center .lead {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7)
+
+}
 .card {
     height: 650px; /* Fixe une hauteur uniforme pour toutes les cartes */
     display: flex;
