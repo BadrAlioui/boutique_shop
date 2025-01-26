@@ -132,13 +132,13 @@ Ensure you have the following installed:
 ## Screenshots
 
 ### Home Page
-![Home Page](<!-- Add your image link here -->)
+![Home Page](/images/home_page.png)
 
 ### Product Page
-![Product Page](<!-- Add your image link here -->)
+![Product Page](/images/products_page.png)
 
 ### Edit Profile Page
-![Edit Profile Page](<!-- Add your image link here -->)
+![Edit Profile Page](/images/edit_profile_page.png)
 
 ---
 
@@ -159,6 +159,28 @@ Ensure you have the following installed:
 - **Optimized Headings**: Structured headings for better content readability.
 
 ---
+
+### **Facebook Page for Boutique VitaleVibes**
+
+As part of my content marketing strategy, I created a dedicated Facebook page to promote Boutique VitaleVibes's products and engage with my target audience. This page serves as a platform to showcase the latest offers, share updates, and drive traffic to the website.
+
+#### **Purpose of the Facebook Page:**
+- **Brand Visibility**: Boost awareness of Boutique VitaleVibes among a broader audience.
+- **Engagement**: Interact directly with customers through posts, comments, and messages.
+- **Promotion**: Announce new product launches, special discounts, and seasonal offers.
+- **Traffic Generation**: Redirect visitors to the website for a seamless shopping experience.
+
+#### **Key Features:**
+- **Content Posts**: Sharing high-quality images and descriptions of featured products.
+- **Call-to-Action**: Encouraging users to visit the e-commerce store for exclusive offers.
+- **Customer Interaction**: Responding promptly to inquiries and building trust with the audience.
+
+[home-page](/images/spage1_facebook.png)
+
+[home-page2](/images/page2_facebook.png)
+
+By integrating Facebook into my marketing strategy, I aim to connect with potential customers where they are most active and strengthen Boutique VitaleVibes's online presence.
+
 
 ## Testing
 
