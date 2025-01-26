@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/?category=men</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/?category=women</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/?category=t-shirts</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/?category=pants</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/?sort=price&amp;direction=asc</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/?sort=price&amp;direction=desc</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/?sort=rating&amp;direction=desc</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/auth/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/auth/register/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/contact/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/product/basic-white-t-shirt/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/product/graphic-black-t-shirt/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/product/slim-fit-jeans/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/product/chinos/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/product/v-neck-t-shirt/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/product/classic-polo-shirt/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/product/striped-t-shirt/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/product/relaxed-fit-pants/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/product/cargo-pants/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/product/jogger-pants/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/product/crop-top/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/product/skinny-jeans/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/product/high-waist-pants/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/product/oversized-white-t-shirt/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/products/product/Women-Tunic-Tops-Long/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/auth/?next=/products/product/basic-white-t-shirt/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/auth/?next=/products/product/graphic-black-t-shirt/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/auth/?next=/products/product/slim-fit-jeans/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/auth/?next=/products/product/chinos/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/auth/?next=/products/product/v-neck-t-shirt/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/auth/?next=/products/product/classic-polo-shirt/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/auth/?next=/products/product/striped-t-shirt/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/auth/?next=/products/product/relaxed-fit-pants/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/auth/?next=/products/product/cargo-pants/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/auth/?next=/products/product/jogger-pants/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/auth/?next=/products/product/crop-top/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/auth/?next=/products/product/skinny-jeans/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/auth/?next=/products/product/high-waist-pants/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/auth/?next=/products/product/oversized-white-t-shirt/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://boutique-shop-9cbda2d44e62.herokuapp.com/auth/?next=/products/product/Women-Tunic-Tops-Long/</loc>
+  <lastmod>2025-01-26T15:56:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>

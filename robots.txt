@@ -1,0 +1,3 @@
+User-agent: *
+Disallow
+Sitemap: https://boutique-shop-9cbda2d44e62.herokuapp.com/sitemap.xml
