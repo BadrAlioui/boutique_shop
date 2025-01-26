@@ -132,13 +132,13 @@ Ensure you have the following installed:
 ## Screenshots
 
 ### Home Page
-![Home Page](<!-- Add your image link here -->)
+![Home Page](/images/home_page.png)
 
 ### Product Page
-![Product Page](<!-- Add your image link here -->)
+![Product Page](/images/products_page.png)
 
 ### Edit Profile Page
-![Edit Profile Page](<!-- Add your image link here -->)
+![Edit Profile Page](/images/edit_profile_page.png)
 
 ---
 
