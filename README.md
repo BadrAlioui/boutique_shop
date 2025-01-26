@@ -175,9 +175,9 @@ As part of my content marketing strategy, I created a dedicated Facebook page to
 - **Call-to-Action**: Encouraging users to visit the e-commerce store for exclusive offers.
 - **Customer Interaction**: Responding promptly to inquiries and building trust with the audience.
 
-[home-page](/images/spage1-facebook.png)
+![home-page](/images/spage1-facebook.png)
 
-[home-page2](/images/page2-facebook.png)
+![home-page2](/images/page2-facebook.png)
 
 By integrating Facebook into my marketing strategy, I aim to connect with potential customers where they are most active and strengthen Boutique VitaleVibes's online presence.
 
