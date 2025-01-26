@@ -187,7 +187,7 @@ Lighthouse tests ensured high accessibility scores:
 ## Deployment
 
 The project is deployed on **Heroku**. You can access the live application here:  
-[Live Application](<!-- Add your Heroku app link here -->)
+[Live Application](https://boutique-shop-9cbda2d44e62.herokuapp.com/)
 
 ---
 
