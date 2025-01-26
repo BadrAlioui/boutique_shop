@@ -1,6 +1,6 @@
 # Boutique-Ecommerce
 
-![Home Page](<!-- Add your image link here -->)
+![Home Page](/images/responsive.png)
 
 ## About the Project
 
