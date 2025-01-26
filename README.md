@@ -42,6 +42,47 @@ This project uses modern technologies to ensure functionality and scalability:
 
 ---
 
+## Bugs Resolved
+
+During the development and deployment of this project, the following major bugs were encountered and resolved:
+
+### **1. IP Address Mismatch on Heroku**
+- **Problem**: While deploying the application on Heroku, an "IP address mismatch" error occurred, causing deployment failures.
+- **Solution**: 
+  - The issue was resolved by removing the following line from `settings.py`:
+    ```python
+    django_heroku.settings(locals())
+    ```
+  - This line was causing unnecessary configurations to override the local settings, leading to conflicts during deployment.
+- **Outcome**: Once removed, the deployment worked flawlessly.
+
+### **2. Media Files Not Persisting on Heroku**
+- **Problem**: Images uploaded to the platform were lost after deployments or server restarts due to Heroku’s ephemeral file system.
+- **Solution**: Cloudinary was integrated for external storage of media files:
+  - Installed `django-cloudinary-storage`:
+    ```bash
+    pip install django-cloudinary-storage
+    ```
+  - Configured Cloudinary in `settings.py`:
+    ```python
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+    cloudinary.config(
+        cloud_name='your_cloud_name',
+        api_key='your_api_key',
+        api_secret='your_api_secret'
+    )
+    ```
+  - Media files are now securely stored in the cloud.
+- **Outcome**: Media files are permanently stored and reliably served, even after redeployments.
+
+### **3. CSS Not Loading Locally**
+- **Problem**: CSS files were not loading on `localhost` because the `collectstatic` command had not been run.
+- **Solution**: The following command was executed to collect all static files:
+  ```bash
+  python manage.py collectstatic
+
+---
+
 ## Getting Started
 
 ### Prerequisites
@@ -103,8 +144,6 @@ Ensure you have the following installed:
 
 ## SEO Strategy
 
-To improve the platform's discoverability on search engines, the following SEO strategies were implemented:
-
 ### Keyword Research
 - **Short-tail keywords**:
   - "Online fashion store"
@@ -114,24 +153,10 @@ To improve the platform's discoverability on search engines, the following SEO s
   - "Elegant crop tops for women"
 
 ### On-Page SEO
-1. **Meta Tags**:  
-   - Home Page: "Boutique-Ecommerce - Affordable Fashion for Everyone"  
-   - Product Page: "Slim-Fit Jeans for Men - Shop Online at Boutique-Ecommerce"
-2. **Clean URLs**:  
-   - `/products/men`  
-   - `/products/slim-fit-jeans`
-3. **Alt Text**: All images include descriptive alt text for better accessibility.
-4. **Optimized Headings**:  
-   - H1: "Affordable Clothing for Men and Women"  
-   - H2: "Explore Categories - Fashion for Everyone"
-
-### Content Optimization
-- **Detailed Product Descriptions**: Informative and engaging descriptions for each product.
-- **Internal Linking**: Links between related products and categories for easy navigation.
-
-### Future Plans
-- Add structured data (schema.org) for rich snippets in search results.
-- Implement a blog for fashion tips and seasonal trends.
+- **Meta Tags**: Descriptive tags for better search engine visibility.
+- **Clean URLs**: Easy-to-read and SEO-friendly URLs.
+- **Alt Text**: Descriptive alt attributes for images.
+- **Optimized Headings**: Structured headings for better content readability.
 
 ---
 
@@ -142,7 +167,6 @@ To improve the platform's discoverability on search engines, the following SEO s
 - **HTML Validation**: No errors detected.
 - **CSS Validation**: Passed with clean code.
 - **Python Testing**: High test coverage using Django’s test framework.
-- **JavaScript Testing**: Verified interactive elements across all pages.
 
 ### Manual Testing
 
@@ -160,38 +184,10 @@ Lighthouse tests ensured high accessibility scores:
 
 ---
 
-## Project Management
-
-This project is managed using the **Kanban methodology** for streamlined task organization and tracking. You can view the project board here:  
-[Kanban Board - GitHub Projects](https://github.com/users/BadrAlioui/projects/9)
-
----
-
 ## Deployment
 
 The project is deployed on **Heroku**. You can access the live application here:  
 [Live Application](<!-- Add your Heroku app link here -->)
-
-### Deployment Steps
-1. Create a Heroku app:
-    ```bash
-    heroku create <app-name>
-    ```
-
-2. Push the code:
-    ```bash
-    git push heroku main
-    ```
-
-3. Set up environment variables:
-    ```bash
-    heroku config:set DATABASE_URL=<your-database-url>
-    ```
-
-4. Run database migrations:
-    ```bash
-    heroku run python manage.py migrate
-    ```
 
 ---
 
