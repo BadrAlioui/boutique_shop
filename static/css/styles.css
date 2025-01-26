@@ -58,11 +58,41 @@ body {
     margin-bottom: 5px;
 }
 
-.text-center .lead {
+.paragraph {
     color: white;
     background-color: rgba(0, 0, 0, 0.7)
 
 }
+
+
+.rating-text {
+    color: #333; /* Darker text color for better contrast */
+    background-color: #fff; /* White background */
+    opacity: 1;
+}
+
+.edit-button {
+    color: #000; /* Black text for high contrast */
+    background-color: #f0ad4e; /* Existing warning color */
+    opacity: 1; /* Ensure full visibility */
+}
+
+.edit-button:hover {
+    background-color: #ec971f; /* Darker shade for hover state */
+    color: #fff; /* White text for hover */
+}
+
+.delete-button {
+    color: #fff; /* White text for better contrast */
+    background-color: #d9534f; /* Existing Bootstrap danger color */
+    opacity: 1; /* Ensure full visibility */
+}
+
+.delete-button:hover {
+    background-color: #c9302c; /* Slightly darker shade for hover */
+    color: #fff; /* Maintain white text on hover */
+}
+
 .card {
     height: 650px; /* Fixe une hauteur uniforme pour toutes les cartes */
     display: flex;

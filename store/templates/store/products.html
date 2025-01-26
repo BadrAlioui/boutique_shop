@@ -48,7 +48,7 @@
                     </h5>
                     <h6>${{product.price}}</h6>
                     {% if product.rating %}
-                    <small class="text-muted"
+                    <small class="class="rating-text"
                         ><i class="fas fa-star mr-1"></i>{{ product.rating }} /
                         5</small
                     >
@@ -60,13 +60,13 @@
                 <div class="card-footer d-flex justify-content-between">
                     <a
                         href="{% url 'update_product' slug=product.slug %}"
-                        class="btn btn-warning btn-sm"
+                        class="btn btn-warning btn-sm edit-button"
                     >
                         <i class="fas fa-edit"></i> Edit
                     </a>
                     <a
                         href="{% url 'delete_product' slug=product.slug %}"
-                        class="btn btn-danger btn-sm"
+                        class="btn btn-danger btn-sm delete-button"
                     >
                         <i class="fas fa-trash"></i> Delete
                     </a>
