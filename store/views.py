@@ -143,7 +143,7 @@ def payment_success(request, reference):
     del request.session['order']
 
     messages.success(request, "Payment successful!")
-    return redirect('product_detail', product_id=product.id)
+    return redirect('product_detail', slug=product.slug)
 
 
 def payment_cancel(request, reference):
@@ -170,7 +170,7 @@ def process_payment(request, slug):
 
         if size not in ['S', 'M', 'L', 'XL']:
             messages.error(request, "Invalid size selected.")
-            return redirect('product_detail', product_id=product.id)
+            return redirect('product_detail', slug=product.slug)
 
         pre_transaction = uuid.uuid4().hex[:6]
 

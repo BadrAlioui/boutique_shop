@@ -69,7 +69,7 @@
         {% for related_product in related_products %}
         <div class="col-md-4">
             <div class="card mt-4">
-                <a href="{% url 'product_detail' related_product.id %}">
+                <a href="{% url 'product_detail' related_product.slug %}">
                     <img
                         src="{{ related_product.image.url }}"
                         alt="{{ related_product.title }}"
@@ -82,7 +82,7 @@
                         ${{ related_product.price }}
                     </p>
                     <a
-                        href="{% url 'product_detail' related_product.id %}"
+                        href="{% url 'product_detail' related_product.slug %}"
                         class="btn btn-outline-primary btn-sm"
                         >View Details</a
                     >
