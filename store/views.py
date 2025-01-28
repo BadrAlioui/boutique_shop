@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpR
 from django.contrib import messages
 from django.conf import settings
 from django.db.models import Q
-from .models import Product, Category, Order
+from .models import Product, Category, Order, Review
+from .forms import ReviewForm
 from .forms import ProductForm
 from django.contrib.auth.decorators import user_passes_test, login_required
 from datetime import datetime
@@ -72,9 +73,23 @@ def all_products(request):
 
 def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug)
+    reviews = product.reviews.all()
     context = {
         'product': product,
+        'reviews': reviews,
     }
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.product = product
+            review.user = request.user
+            review.save()
+            messages.success(request, "Your review has been submitted successfully!")
+            return redirect('product_detail', slug=product.slug)
+    else:
+        form = ReviewForm()
+
     return render(request, 'store/product_detail.html', context)
 
 

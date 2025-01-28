@@ -1,8 +1,12 @@
-from django.forms import ModelForm
-from .models import Product
+from django import forms
+from .models import Product, Review
 
-
-class ProductForm(ModelForm):
+class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = '__all__'
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ['rating', 'comment']

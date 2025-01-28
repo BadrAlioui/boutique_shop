@@ -45,6 +45,28 @@ class Product(models.Model):
         if self.price < 0:
             raise ValidationError("Price cannot be negative")
 
+class Review(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='reviews')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    rating = models.IntegerField(choices=[(i, i) for i in range(1, 6)])  # Note de 1 à 5
+    comment = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Review by {self.user.username} for {self.product.name}"
+
+    @property
+    def average_rating(self):
+        reviews = self.reviews.all()
+        if reviews.exists():
+            return round(reviews.aggregate(models.Avg('rating'))['rating__avg'], 1)
+        return "No ratings yet"
+
+    def clean(self):
+        if not (1 <= self.rating <= 5):
+            raise ValidationError("Rating must be between 1 and 5.")
+
+
 
 class Order(models.Model):
     SIZE_CHOICES = [
