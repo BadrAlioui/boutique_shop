@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load custom_filters %}
+
 {% block content %}
 <div class="container mt-5">
     <div class="row">
@@ -70,10 +72,15 @@
                 <p>
                     <strong>{{ review.user.username }}</strong> 
                     <span class="text-warning">
-                        {% for i in "12345"|slice:":review.rating"|make_list %}
-                        <i class="fas fa-star"></i>
+                        {% for _ in review.rating|to_range %}
+                            <i class="fas fa-star"></i>
+                        {% endfor %}
+                        {% for _ in 5|add:"-review.rating"|to_range %}
+                            <i class="far fa-star"></i>
                         {% endfor %}
                     </span>
+                    
+                    
                 </p>
                 <p>{{ review.comment }}</p>
                 <p class="text-muted">
@@ -85,6 +92,7 @@
         <p class="text-muted">No reviews yet. Be the first to review this product!</p>
         {% endif %}
     </div>
+    
 
     <!-- Formulaire pour ajouter un avis -->
     {% if user.is_authenticated %}
