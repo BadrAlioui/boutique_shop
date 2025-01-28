@@ -9,6 +9,8 @@ from django.contrib.auth.decorators import user_passes_test, login_required
 from datetime import datetime
 from django.views.decorators.csrf import csrf_exempt
 from django.db.models.functions import Lower
+from django.db.models import Avg
+from django.db.models import Avg
 import stripe
 import uuid
 import json
@@ -74,9 +76,11 @@ def all_products(request):
 def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug)
     reviews = product.reviews.all()
+    average_rating = reviews.aggregate(Avg('rating'))['rating__avg']
     context = {
         'product': product,
         'reviews': reviews,
+        'average_rating': round(average_rating, 1) if average_rating else None,
     }
     if request.method == 'POST':
         form = ReviewForm(request.POST)
