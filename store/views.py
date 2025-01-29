@@ -293,9 +293,9 @@ def request_refund(request, order_id):
     else:
         form = RefundForm()
 
-    return render(request, 'refunds/request_refund.html', {'form': form, 'order': order})
+    return render(request, 'store/request_refund.html', {'form': form, 'order': order})
 
 @login_required
 def refund_status(request, refund_id):
     refund = get_object_or_404(Refund, id=refund_id, user=request.user)
-    return render(request, 'refunds/refund_status.html', {'refund': refund})
+    return render(request, 'store/refund_status.html', {'refund': refund})
