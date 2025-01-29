@@ -13,6 +13,8 @@ urlpatterns = [
     path('<str:reference>/success/', views.payment_success, name='success'),
     path('<str:reference>/cancel/', views.payment_cancel, name='cancel'),
     path('stripe_webhook/', views.stripe_webhook, name='stripe_webhook'),
+    path('refunds/request/<int:order_id>/', views.request_refund, name='request_refund'),
+    path('refunds/status/<int:refund_id>/', views.refund_status, name='refund_status'),
 ]
 
 

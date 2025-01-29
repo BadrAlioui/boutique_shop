@@ -18,4 +18,50 @@
         </div>
     </div>
 </div>
+<div class="card mt-4">
+    <div class="card-body">
+        <h5 class="card-title">My Orders</h5>
+        {% if user.order_set.all %}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Order #</th>
+                        <th>Product</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in user.order_set.all %}
+                    <tr>
+                        <td>#{{ order.id }}</td>
+                        <td>{{ order.product.title }}</td>
+                        <td>{{ order.date|date:"d M Y" }}</td>
+                        <td>{{ order.status }}</td>
+                        
+                        <td>
+                            {% if order.status == "Paid" %}
+                                {% if order.refunds.exists %}
+                                    <span class="text-warning">Refund Requested</span>
+                                {% else %}
+                                    <a href="{% url 'request_refund' order_id=order.id %}" class="btn btn-danger btn-sm">
+                                        Request Refund
+                                    </a>
+                                {% endif %}
+                            {% else %}
+                                <span class="text-muted">Not eligible for refund</span>
+                            {% endif %}
+                        </td>
+                        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p class="text-muted">No orders found.</p>
+        {% endif %}
+    </div>
+</div>
+
 {% endblock %}

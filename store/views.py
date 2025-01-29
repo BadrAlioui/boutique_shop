@@ -2,9 +2,10 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpR
 from django.contrib import messages
 from django.conf import settings
 from django.db.models import Q
-from .models import Product, Category, Order, Review
+from .models import Product, Category, Order, Review, Refund
 from .forms import ReviewForm
 from .forms import ProductForm
+from .forms import RefundForm
 from django.contrib.auth.decorators import user_passes_test, login_required
 from datetime import datetime
 from django.views.decorators.csrf import csrf_exempt
@@ -146,6 +147,7 @@ def delete_product(request, slug):
     template = 'store/delete_product.html'
     context = {'product': product}
     return render(request, template, context)
+    
 
 
 def payment_success(request, reference):
@@ -260,3 +262,40 @@ def stripe_webhook(request):
         order.save()
 
     return HttpResponse(status=200)
+
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from .models import Refund, Order
+from .forms import RefundForm
+
+@login_required
+def request_refund(request, order_id):
+    order = get_object_or_404(Order, id=order_id, user=request.user)
+
+    if order.status != "Paid":
+        messages.error(request, "You can only request a refund for paid orders.")
+        return redirect('my_profile')
+
+    if Refund.objects.filter(order=order).exists():
+        messages.error(request, "You have already requested a refund for this order.")
+        return redirect('order_history')
+
+    if request.method == 'POST':
+        form = RefundForm(request.POST)
+        if form.is_valid():
+            refund = form.save(commit=False)
+            refund.user = request.user
+            refund.order = order
+            refund.save()
+            messages.success(request, "Your refund request has been submitted.")
+            return redirect('refund_status', refund_id=refund.id)
+    else:
+        form = RefundForm()
+
+    return render(request, 'refunds/request_refund.html', {'form': form, 'order': order})
+
+@login_required
+def refund_status(request, refund_id):
+    refund = get_object_or_404(Refund, id=refund_id, user=request.user)
+    return render(request, 'refunds/refund_status.html', {'refund': refund})
