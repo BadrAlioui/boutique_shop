@@ -1,5 +1,5 @@
 from django.core.exceptions import ValidationError
-from store.models import Category, Product, Order
+from store.models import Category, Product, Order, Refund
 from django.test import TestCase
 from django.contrib.auth.models import User
 
@@ -9,12 +9,13 @@ class TestModels(TestCase):
         self.user = User.objects.create_user(username='testuser', password='testpass')
         self.category = Category.objects.create(name='test category')
         self.product = Product.objects.create(
-            category=self.category, 
-            title='test product', 
-            description='test description',
-            price=10.00, 
-            stock=10
+        title='test product',
+        description='test description',
+        price=10.00, 
+        stock=10
         )
+        self.product.category.add(self.category)  # Ajout de la catégorie
+
         self.order = Order.objects.create(
             user=self.user, 
             product=self.product,  # Use the Product instance
@@ -47,7 +48,17 @@ class TestModels(TestCase):
             self.product.clean()
 
     def test_order_model(self):
-        self.assertIn("Order by testuser for test product", str(self.order))
+        self.assertIn(f"Order by {self.user.username} for {self.product.title}", str(self.order))
         self.assertIn("Status: Created", str(self.order))
+
+    def test_refund_model(self):
+        refund = Refund.objects.create(
+            order=self.order,
+            user=self.user,
+            reason="Test refund reason",
+            status="pending"
+        )
+        self.assertEqual(str(refund), f"Refund request for Order {self.order.id} - Pending")
+
 
 

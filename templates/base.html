@@ -111,15 +111,11 @@
                                     class="dropdown-menu"
                                     aria-labelledby="user-options"
                                 >
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            Product Management
-                                        </a>
-                                    </li>
+                                    
                                     {% if user.is_authenticated %}
                                     <li>
                                         <a class="dropdown-item" href="{% url 'my_profile' %}">
-                                            My Profile
+                                            My Profile and My Orders
                                         </a>
                                     </li>
 
