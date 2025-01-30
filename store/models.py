@@ -63,6 +63,9 @@ class Review(models.Model):
         return "No ratings yet"
 
     def clean(self):
+        if self.rating is None:  # Ajoute cette vérification
+            raise ValidationError("Rating cannot be empty.")
+
         if not (1 <= self.rating <= 5):
             raise ValidationError("Rating must be between 1 and 5.")
 
