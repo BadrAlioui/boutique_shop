@@ -263,23 +263,21 @@ def stripe_webhook(request):
 
     return HttpResponse(status=200)
 
-from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.decorators import login_required
-from django.contrib import messages
-from .models import Refund, Order
-from .forms import RefundForm
 
+
+from django.contrib.auth import update_session_auth_hash
 @login_required
 def request_refund(request, order_id):
     order = get_object_or_404(Order, id=order_id, user=request.user)
-
+    order.refresh_from_db()
+    
     if order.status != "Paid":
         messages.error(request, "You can only request a refund for paid orders.")
-        return redirect('my_profile')
+        return redirect(reverse('my_profile'))
 
     if Refund.objects.filter(order=order).exists():
         messages.error(request, "You have already requested a refund for this order.")
-        return redirect('order_history')
+        return redirect(reverse('my_profile'))
 
     if request.method == 'POST':
         form = RefundForm(request.POST)
@@ -289,11 +287,16 @@ def request_refund(request, order_id):
             refund.order = order
             refund.save()
             messages.success(request, "Your refund request has been submitted.")
-            return redirect('refund_status', refund_id=refund.id)
+            return redirect(reverse('refund_status', args=[refund.id]))
+        
     else:
         form = RefundForm()
 
     return render(request, 'store/request_refund.html', {'form': form, 'order': order})
+
+
+
+
 
 @login_required
 def refund_status(request, refund_id):
