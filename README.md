@@ -144,7 +144,7 @@ Ensure you have the following installed:
 
 ## wireframes
 
-![wireframe](/images/wireframe-boutique.png)
+
 
 ## SEO Strategy
 
