@@ -1,23 +1,17 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
 from django.conf import settings
-from django.db.models import Q
-from .models import Product, Category, Order, Review, Refund
-from .forms import ReviewForm
-from .forms import ProductForm
-from .forms import RefundForm
+from django.db.models import Q, Avg
+from django.db.models.functions import Lower
 from django.contrib.auth.decorators import user_passes_test, login_required
 from datetime import datetime
 from django.views.decorators.csrf import csrf_exempt
-from django.db.models.functions import Lower
-from django.db.models import Avg
-from django.db.models import Avg
+from .models import Product, Category, Order, Review, Refund
+from .forms import ReviewForm, ProductForm, RefundForm
 import stripe
 import uuid
 import json
-
-# Configuration de la clé Stripe
-stripe.api_key = "votre_clé_secrète"  
 
 
 def admin_required(user):
@@ -73,6 +67,7 @@ def all_products(request):
     }
 
     return render(request, 'store/products.html', context)
+
 
 def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug)
@@ -147,7 +142,6 @@ def delete_product(request, slug):
     template = 'store/delete_product.html'
     context = {'product': product}
     return render(request, template, context)
-    
 
 
 def payment_success(request, reference):
@@ -187,7 +181,7 @@ def process_payment(request, slug):
     user = request.user
 
     if request.method == "POST":
-        size = request.POST.get('size')  # Récupère la taille choisie depuis le formulaire
+        size = request.POST.get('size')
 
         if size not in ['S', 'M', 'L', 'XL']:
             messages.error(request, "Invalid size selected.")
@@ -198,7 +192,7 @@ def process_payment(request, slug):
         order = Order(
             user=user,
             product=product,
-            size=size,  # Ajout de la taille à la commande
+            size=size,
             reference=pre_transaction,
             date=datetime.now(),
             status="Created",
@@ -215,7 +209,7 @@ def process_payment(request, slug):
                         'currency': 'eur',
                         'unit_amount': int(product.price * 100),
                         'product_data': {
-                            'name': f"{product.title} ({size})",  # Ajout de la taille au titre
+                            'name': f"{product.title} ({size})",
                             'description': product.description,
                             'images': [request.build_absolute_uri(product.image.url)] if product.image else [],
                         },
@@ -239,13 +233,11 @@ def process_payment(request, slug):
     return render(request, 'store/product_detail.html', {'product': product})
 
 
-
 @csrf_exempt
 def stripe_webhook(request):
     """Webhook Stripe pour mettre à jour le statut des commandes"""
     payload = request.body
     event = None
-
     try:
         event = stripe.Event.construct_from(json.loads(payload), stripe.api_key)
     except ValueError:
@@ -264,21 +256,16 @@ def stripe_webhook(request):
     return HttpResponse(status=200)
 
 
-
-from django.contrib.auth import update_session_auth_hash
 @login_required
 def request_refund(request, order_id):
     order = get_object_or_404(Order, id=order_id, user=request.user)
     order.refresh_from_db()
-    
     if order.status != "Paid":
         messages.error(request, "You can only request a refund for paid orders.")
         return redirect(reverse('my_profile'))
-
     if Refund.objects.filter(order=order).exists():
         messages.error(request, "You have already requested a refund for this order.")
         return redirect(reverse('my_profile'))
-
     if request.method == 'POST':
         form = RefundForm(request.POST)
         if form.is_valid():
@@ -288,14 +275,9 @@ def request_refund(request, order_id):
             refund.save()
             messages.success(request, "Your refund request has been submitted.")
             return redirect(reverse('refund_status', args=[refund.id]))
-        
     else:
         form = RefundForm()
-
     return render(request, 'store/request_refund.html', {'form': form, 'order': order})
-
-
-
 
 
 @login_required

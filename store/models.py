@@ -57,10 +57,11 @@ class Review(models.Model):
 
     @property
     def average_rating(self):
-        reviews = self.reviews.all()
+        reviews = Review.objects.filter(product=self.product)
         if reviews.exists():
             return round(reviews.aggregate(models.Avg('rating'))['rating__avg'], 1)
         return "No ratings yet"
+
 
     def clean(self):
         if self.rating is None:  # Ajoute cette vérification
@@ -92,11 +93,6 @@ class Order(models.Model):
         product_str = self.product.title if self.product else "Unknown Product"
         return f"Order by {user_str} for {product_str} ({self.get_size_display()}) - Status: {self.status}"
 
-
-
-from django.db import models
-from django.contrib.auth.models import User
-from store.models import Order  # Assure-toi que le modèle Order est bien importé
 
 class Refund(models.Model):
     STATUS_CHOICES = [

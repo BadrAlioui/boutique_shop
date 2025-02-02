@@ -4,9 +4,11 @@ from .forms import ContactForm
 from django.contrib import messages
 from django.core.mail import send_mail
 
+
 # Create your views here.
 def home_page(request):
     return render(request, 'home/home.html')
+
 
 def contact_page(request):
     form = ContactForm()

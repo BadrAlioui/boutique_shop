@@ -3,11 +3,13 @@ from store.forms import ProductForm, ReviewForm, RefundForm
 from store.models import Category, Product, Review, Order, Refund
 from django.contrib.auth.models import User
 
+
 class TestForms(TestCase):
 
     def setUp(self):
         """Set up test objects for the forms."""
-        self.user = User.objects.create_user(username='testuser', password='testpass')
+        self.user = User.objects.create_user(username='testuser',
+                                             password='testpass')
         self.category = Category.objects.create(name='Test Category')
         self.product = Product.objects.create(
             title="Test Product",
@@ -45,10 +47,10 @@ class TestForms(TestCase):
             'stock': -10  # Negative stock
         })
         self.assertFalse(form.is_valid())
-        self.assertIn('title', form.errors)  # Ensure title error exists
-        self.assertIn('price', form.errors)  # Ensure price error exists
-        self.assertIn('__all__', form.errors)  # Ensure overall form validation error
-        self.assertIn('Stock cannot be negative', str(form.errors['__all__']))  
+        self.assertIn('title', form.errors)
+        self.assertIn('price', form.errors)
+        self.assertIn('__all__', form.errors)
+        self.assertIn('Stock cannot be negative', str(form.errors['__all__']))
 
     def test_valid_review_form(self):
         """Ensure a valid review form is accepted."""

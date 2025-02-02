@@ -6,25 +6,23 @@ from django.contrib.auth.models import User
 
 class TestModels(TestCase):
     def setUp(self):
-        self.user = User.objects.create_user(username='testuser', password='testpass')
+        self.user = User.objects.create_user(username='testuser',
+                                             password='testpass')
         self.category = Category.objects.create(name='test category')
         self.product = Product.objects.create(
-        title='test product',
-        description='test description',
-        price=10.00, 
-        stock=10
+            title='test product',
+            description='test description',
+            price=10.00,
+            stock=10
         )
-        self.product.category.add(self.category)  # Ajout de la catégorie
+        self.product.category.add(self.category)
 
         self.order = Order.objects.create(
-            user=self.user, 
-            product=self.product,  # Use the Product instance
-            reference='test reference', 
+            user=self.user,
+            product=self.product,
+            reference='test reference',
             price=10.00
         )
-
-
-
 
     def test_in_stock(self):
         self.assertTrue(self.product.in_stock)
@@ -33,7 +31,6 @@ class TestModels(TestCase):
         self.product.stock = -1
         with self.assertRaises(ValidationError):
             self.product.clean()
-
 
     def test_category_model(self):
         self.assertEqual(str(self.category), 'test category')

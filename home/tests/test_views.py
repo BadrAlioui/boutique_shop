@@ -12,7 +12,6 @@ class TestHomePage(TestCase):
         response = self.client.get('/')
         self.assertTemplateUsed(response, 'home/home.html')
 
-    
     def test_contact_page_status_code(self):
         response = self.client.get('/contact/')
         self.assertEqual(response.status_code, 200)
@@ -27,7 +26,6 @@ class TestHomePage(TestCase):
             'name': 'test',
             'email': 'test@gmail.com',
             'message': 'test message',
-            
         })
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, '/contact/')
@@ -35,7 +33,3 @@ class TestHomePage(TestCase):
         self.assertEqual(mail.outbox[0].subject, 'Message from test (test@gmail.com)')
         self.assertEqual(mail.outbox[0].body, 'test message')
         self.assertEqual(mail.outbox[0].from_email, 'studentinstitute2024@gmail.com')
-        
-
-
-    

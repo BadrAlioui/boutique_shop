@@ -12,8 +12,10 @@ class TestViews(TestCase):
     def setUp(self):
         """Set up test environment before each test."""
         self.client = Client()
-        self.user = User.objects.create_user(username="testuser", password="testpass")
-        self.admin = User.objects.create_superuser(username="admin", password="adminpass")
+        self.user = User.objects.create_user(username="testuser",
+                                             password="testpass")
+        self.admin = User.objects.create_superuser(username="admin",
+                                                   password="adminpass")
 
         self.category = Category.objects.create(name="Men", slug="men")
         self.product = Product.objects.create(
@@ -47,7 +49,8 @@ class TestViews(TestCase):
 
     def test_product_detail_view(self):
         """Check if product details are accessible."""
-        response = self.client.get(reverse("product_detail", args=[self.product.slug]))
+        response = self.client.get(reverse("product_detail",
+                                           args=[self.product.slug]))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "store/product_detail.html")
 
@@ -70,9 +73,8 @@ class TestViews(TestCase):
 
         # Vérifier que l'utilisateur est bien admin
         admin_user = User.objects.get(username='admin')
-        
-        
-        response = self.client.post(reverse('update_product', args=[self.product.slug]), {
+        response = self.client.post(reverse('update_product',
+                                            args=[self.product.slug]), {
             "title": "Updated Product",
             "description": "Updated description",
             "price": 25.00,
@@ -86,19 +88,14 @@ class TestViews(TestCase):
         self.product.refresh_from_db()
         self.assertEqual(self.product.title, "Updated Product")
 
-
-
-
-
-
     def test_delete_product_view(self):
         """Ensure product deletion works for admin users."""
         self.client.login(username="admin", password="adminpass")
-        response = self.client.post(reverse("delete_product", args=[self.product.slug]))
+        response = self.client.post(reverse("delete_product",
+                                            args=[self.product.slug]))
         self.assertEqual(response.status_code, 302)
         self.assertFalse(Product.objects.filter(slug=self.product.slug).exists())
 
-  
     def test_request_refund_view(self):
         """Ensure users can request a refund only for paid orders."""
         self.client.login(username='testuser', password='testpass')
@@ -106,7 +103,8 @@ class TestViews(TestCase):
         self.order.save()
         self.order.refresh_from_db()
 
-        response = self.client.get(reverse('request_refund', args=[self.order.id]), follow=True)
+        response = self.client.get(reverse('request_refund',
+                                           args=[self.order.id]), follow=True)
 
         if response.redirect_chain:
             final_url = response.redirect_chain[-1][0]
@@ -117,11 +115,10 @@ class TestViews(TestCase):
 
         self.assertEqual(response.status_code, 200)
 
-
     def test_refund_status_view(self):
         """Ensure refund status is visible to the user."""
         self.client.login(username="testuser", password="testpass")
-        response = self.client.get(reverse("refund_status", args=[self.refund.id]))
+        response = self.client.get(reverse("refund_status",
+                                   args=[self.refund.id]))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "store/refund_status.html")
-
