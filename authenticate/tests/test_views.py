@@ -12,7 +12,8 @@ class TestViews(TestCase):
         self.register_url = reverse('register')
         self.edit_profile_url = reverse('edit_profile')
         self.change_password_url = reverse('change_password')
-        self.user = User.objects.create_user(username='testuser', password='testpass')
+        self.user = User.objects.create_user(username='testuser',
+                                             password='testpass')
 
     def test_login_view_GET(self):
         response = self.client.get(self.login_url)
@@ -53,14 +54,12 @@ class TestViews(TestCase):
             'password2': 'strongpassword123',
             'first_name': 'FirstName',
             'last_name': 'LastName',
-            'email': 'newuser@example.com',
+            'email': 'user@example.com',
         })
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse('home'))
         self.assertTrue(User.objects.filter(username='newuser').exists())
-        self.assertTrue(User.objects.filter(email='newuser@example.com').exists())
-
-
+        self.assertTrue(User.objects.filter(email='user@example.com').exists())
 
     def test_edit_profile_view_POST_valid(self):
         self.client.login(username='testuser', password='testpass')
@@ -75,8 +74,6 @@ class TestViews(TestCase):
         self.assertEqual(self.user.first_name, 'UpdatedFirstName')
         self.assertEqual(self.user.last_name, 'UpdatedLastName')
         self.assertEqual(self.user.email, 'updated@example.com')
-
-
 
     def test_edit_profile_view_GET(self):
         self.client.login(username='testuser', password='testpass')
@@ -96,7 +93,6 @@ class TestViews(TestCase):
         self.user.refresh_from_db()
         self.assertEqual(self.user.first_name, 'NewName')
         self.assertEqual(self.user.email, 'newname@example.com')
-
 
     def test_change_password_view_GET(self):
         self.client.login(username='testuser', password='testpass')
