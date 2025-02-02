@@ -8,25 +8,30 @@ from .models import Profile
 class EditProfileForm(forms.ModelForm):
     username = forms.CharField(
         max_length=150,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your username'}),
+        widget=forms.TextInput(attrs={'class': 'form-control',
+                                      'placeholder': 'Enter your username'}),
     )
     email = forms.EmailField(
-        widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Enter your email'}),
+        widget=forms.EmailInput(attrs={'class': 'form-control',
+                                       'placeholder': 'Enter your email'}),
     )
     first_name = forms.CharField(
         max_length=150,
         required=False,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your first name'}),
+        widget=forms.TextInput(attrs={'class': 'form-control',
+                                      'placeholder': 'Enter your first name'}),
     )
     last_name = forms.CharField(
         max_length=150,
         required=False,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your last name'}),
+        widget=forms.TextInput(attrs={'class': 'form-control',
+                                      'placeholder': 'Enter your last name'}),
     )
     address = forms.CharField(
         max_length=255,
         required=False,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your address'}),
+        widget=forms.TextInput(attrs={'class': 'form-control',
+                                      'placeholder': 'Enter your address'}),
     )
 
     class Meta:
@@ -57,38 +62,45 @@ class EditProfileForm(forms.ModelForm):
         return super().save(commit=commit)
 
 
-
 class SignUpForm(UserCreationForm):
     username = forms.CharField(
-        widget=forms.TextInput(attrs={"class": "form-control", "placeholder": "Enter your username"}),
+        widget=forms.TextInput(attrs={"class": "form-control",
+                                      "placeholder": "Enter your username"}),
         max_length=150,
     )
     email = forms.EmailField(
-        widget=forms.EmailInput(attrs={"class": "form-control", "placeholder": "Enter your email"})
+        widget=forms.EmailInput(attrs={"class": "form-control",
+                                       "placeholder": "Enter your email"})
     )
     first_name = forms.CharField(
         max_length=150,
-        widget=forms.TextInput(attrs={"class": "form-control", "placeholder": "Enter your first name"})
+        widget=forms.TextInput(attrs={"class": "form-control",
+                                      "placeholder": "Enter your first name"})
     )
     last_name = forms.CharField(
         max_length=150,
-        widget=forms.TextInput(attrs={"class": "form-control", "placeholder": "Enter your last name"})
+        widget=forms.TextInput(attrs={"class": "form-control",
+                                      "placeholder": "Enter your last name"})
     )
     address = forms.CharField(
         max_length=255,
         required=False,
-        widget=forms.TextInput(attrs={"class": "form-control", "placeholder": "Enter your address"})
+        widget=forms.TextInput(attrs={"class": "form-control",
+                                      "placeholder": "Enter your address"})
     )
     password1 = forms.CharField(
-        widget=forms.PasswordInput(attrs={"class": "form-control", "placeholder": "Enter your password"})
+        widget=forms.PasswordInput(attrs={"class": "form-control",
+                                          "placeholder": "Your password"})
     )
     password2 = forms.CharField(
-        widget=forms.PasswordInput(attrs={"class": "form-control", "placeholder": "Confirm your password"})
+        widget=forms.PasswordInput(attrs={"class": "form-control",
+                                          "placeholder": "Confirm password"})
     )
 
     class Meta:
         model = User
-        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
+        fields = ('username', 'first_name', 'last_name', 'email',
+                  'password1', 'password2')
 
     def save(self, commit=True):
         user = super().save(commit=commit)
@@ -98,6 +110,3 @@ class SignUpForm(UserCreationForm):
         if commit:
             profile.save()
         return user
-
-
-
