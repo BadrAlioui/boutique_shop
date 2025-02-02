@@ -201,6 +201,31 @@ By integrating Facebook into my marketing strategy, I aim to connect with potent
 
 ---
 
+
+---
+
+## Code Quality
+
+### Python Code Example
+![Python Code Example](/images/python_code_example.png)
+
+### JavaScript Code Example
+![JavaScript Code Example](/images/javascript_code_example.png)
+
+### HTML Code Example
+![HTML Code Example](/images/html_code_example.png)
+
+### CSS Code Example
+![CSS Code Example](/images/css_code_example.png)
+
+---
+
+## HTML Coverage
+
+To ensure code robustness, here’s the HTML coverage report:
+![HTML Coverage](/images/html_coverage.png)
+
+
 ## Accessibility
 
 Lighthouse tests ensured high accessibility scores:
