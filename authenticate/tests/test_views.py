@@ -24,7 +24,7 @@ class TestViews(TestCase):
             'username': 'testuser',
             'password': 'testpass'
         })
-        self.assertEqual(response.status_code, 302)  # Redirect after login
+        self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse('home'))
 
     def test_login_view_POST_invalid(self):
@@ -38,7 +38,7 @@ class TestViews(TestCase):
     def test_logout_view(self):
         self.client.login(username='testuser', password='testpass')
         response = self.client.get(self.logout_url)
-        self.assertEqual(response.status_code, 302)  # Redirect after logout
+        self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse('home'))
 
     def test_register_view_GET(self):
