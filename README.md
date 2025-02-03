@@ -209,14 +209,28 @@ By integrating Facebook into my marketing strategy, I aim to connect with potent
 ### Python Code Example
 ![Python Code Example](/images/python_code_example.png)
 
+Sometimes, scripts may contain more characters than expected, but I’m leaving it that way for an improved experience for advanced users
+
 ### JavaScript Code Example
 ![JavaScript Code Example](/images/javascript_code_example.png)
 
-### HTML Code Example
-![HTML Code Example](/images/html_code_example.png)
+### HTML Code Examples
+
+#### Home Page
+
+![HTML Home Page](/images/home_page_html.png)
+
+#### Product Page
+
+![HTML Product Page](/images/Product_page_html.png)
+
+#### Product detail
+
+![HTML Product detail](/images/product_detail_html.png)
 
 ### CSS Code Example
 ![CSS Code Example](/images/css_code_example.png)
+
 
 ---
 
