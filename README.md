@@ -237,7 +237,7 @@ Sometimes, scripts may contain more characters than expected, but I’m leaving 
 ## HTML Coverage
 
 To ensure code robustness, here’s the HTML coverage report:
-![HTML Coverage](/images/html_coverage.png)
+![HTML Coverage](/images/coverage_report.png)
 
 
 ## Accessibility
