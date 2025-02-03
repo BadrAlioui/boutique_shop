@@ -245,7 +245,12 @@ To ensure code robustness, here’s the HTML coverage report:
 Lighthouse tests ensured high accessibility scores:
 
 - **Mobile Accessibility**: Scored above 90%.
+
+![mobile](/images/mobile_lighthouse.png)
+
 - **Desktop Accessibility**: Scored above 95%.
+
+"[desktop](/images/desktop_lighthouse.png)
 
 ---
 
