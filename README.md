@@ -250,7 +250,7 @@ Lighthouse tests ensured high accessibility scores:
 
 - **Desktop Accessibility**: Scored above 95%.
 
-"[desktop](/images/desktop_lighthouse.png)
+![desktop](/images/desktop_lighthouse.png)
 
 ---
 
