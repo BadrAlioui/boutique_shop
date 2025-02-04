@@ -82,7 +82,7 @@ def delete_account(request):
         user = request.user
         user.delete()
         messages.success(request, "Your account has been deleted successfully.")
-        return redirect('home')  # Redirigez vers la page d'accueil ou une autre page
+        return redirect('home')
 
     return render(request, 'authenticate/delete_account.html')
 
@@ -104,7 +104,7 @@ def change_password(request):
 
 
 def my_profile(request):
-    profile = Profile.objects.get(user=request.user)  # Récupérer le profil associé à l'utilisateur connecté
+    profile = Profile.objects.get(user=request.user)
     return render(request, 'authenticate/my_profile.html', {'profile': profile})
 
 
