@@ -134,6 +134,10 @@ Ensure you have the following installed:
 ### Home Page
 ![Home Page](/images/home_page.png)
 
+### Contact Page
+
+![Contact Page](/images/Screenshot_contact_page.png)
+
 ### Product Page
 ![Product Page](/images/products_page.png)
 
