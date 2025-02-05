@@ -42,6 +42,19 @@ This project uses modern technologies to ensure functionality and scalability:
 
 ---
 
+## **Authentication**
+
+In this project, Django's built-in authentication system makes it easy for users to sign up, log in, and log out securely. Once logged in, users can:
+
+- Update their profile information.
+- View and manage their orders.
+- Request refunds for eligible purchases.
+- Edit or even delete their accounts if they choose.
+
+Django takes care of the heavy lifting, like password security and session management, so everything stays safe and reliable. This way, users have a smooth and secure experience while interacting with the site.
+
+---
+
 ## Bugs Resolved
 
 During the development and deployment of this project, the following major bugs were encountered and resolved:
