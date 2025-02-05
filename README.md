@@ -281,10 +281,85 @@ Lighthouse tests ensured high accessibility scores:
 
 ---
 
-## Deployment
+### Deployment Guide for Django Project on Heroku (Using Git Bash)
+
+For this project, I deployed the Django application on Heroku, a cloud platform that makes it easy to build, run, and scale apps. I used **Git Bash** to manage the deployment process, and I selected the Europe region when setting up the app.
 
 The project is deployed on **Heroku**. You can access the live application here:  
 [Live Application](https://boutique-shop-9cbda2d44e62.herokuapp.com/)
+
+
+Here’s a step-by-step guide on how I did it:
+
+- **Install Required Packages**:
+  Open Git Bash and run the following commands to install the necessary tools:
+  ```bash
+  pip install gunicorn dj-database-url psycopg2 whitenoise python-decouple
+
+
+
+**Settings**
+
+1. **Update `settings.py`**:
+   - Add your Heroku app to `ALLOWED_HOSTS`:
+     ```python
+      ALLOWED_HOSTS = ['your-app-name.herokuapp.com']
+     ```
+   - Install `whitenoise` for handling static files:
+     ```bash
+     pip install whitenoise
+     ```
+     Add it to your middleware:
+     ```python
+     MIDDLEWARE = [
+         'whitenoise.middleware.WhiteNoiseMiddleware',
+         # other middleware...
+     ]
+     ```
+     Configure static files:
+     ```python
+     STATIC_ROOT = BASE_DIR / 'staticfiles'
+     ```
+     Run `python manage.py collectstatic` during deployment.
+   - Install `psycopg2` and `dj-database-url` for database configuration:
+     ```bash
+     pip install psycopg2 dj-database-url
+     ```
+     Update database settings:
+     ```python
+     import dj_database_url
+     DATABASES = {'default': dj_database_url.config()}
+     ```
+   - Set `DEBUG = False` and move `SECRET_KEY` to Config Vars.
+
+2. **Install Gunicorn**:
+   - Install Gunicorn:
+     ```bash
+     pip install gunicorn
+     ```
+   - Create a `Procfile` in the root directory:
+     ```
+     web: gunicorn your_project_name.wsgi
+     ```
+
+3. **Config Vars**          
+    
+  Both in the root level .env file and on Heroku, these are the config vars:
+
+  CLOUDINARY_URL = Your value
+  CLOUDINARY_CLOUD_NAME = Your value
+  CLOUDINARY_API_KEY = Your value
+  CLOUDINARY_API_SECRET = Your value
+  DATABASE_URL = Your value
+  SECRET_KEY = Your value
+
+  Access these vars in your settings.py as follows 
+
+  ```python
+          from decouple import config
+          SECRET_KEY = config('SECRET_KEY')
+  ```
+
 
 ---
 
