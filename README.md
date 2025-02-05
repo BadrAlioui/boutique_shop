@@ -140,6 +140,10 @@ Ensure you have the following installed:
 ### Edit Profile Page
 ![Edit Profile Page](/images/edit_profile_page.png)
 
+### Register Page
+
+![HTML Register Page](/images/register_page.png)
+
 ---
 
 ## wireframes
@@ -216,31 +220,19 @@ Sometimes, scripts may contain more characters than expected, but I’m leaving 
 
 ### HTML Code Examples
 
-#### Home Page
+#### Test Home Page Html
 
 ![HTML Home Page](/images/home_page_html.png)
 
-#### Product Page
-
-![HTML Product Page](/images/Product_page_html.png)
-
-#### Product detail
-
-![HTML Product detail](/images/product_detail_html.png)
-
-#### Register Page
-
-![HTML Register Page](/images/register_page.png)
-
-#### Login Page
+#### Test Login Page Html
 
 ![HTML Login Page](/images/validator_login.png)
 
-#### Delete Profile
+#### Test Delete Profile Html
 
 ![HTML Edit Profile](/images/validator_delete_account.png)
 
-#### Edit Profile
+#### Test Edit Profile Html
 
 ![HTML Edit Profile](/images/validator_edit_profile.png)
 
