@@ -228,6 +228,24 @@ Sometimes, scripts may contain more characters than expected, but I’m leaving 
 
 ![HTML Product detail](/images/product_detail_html.png)
 
+#### Register Page
+
+![HTML Register Page](/images/register_page.png)
+
+#### Login Page
+
+![HTML Login Page](/images/validator_login.png)
+
+#### Delete Profile
+
+![HTML Edit Profile](/images/validator_delete_account.png)
+
+#### Edit Profile
+
+![HTML Edit Profile](/images/validator_edit_profile.png)
+
+
+
 ### CSS Code Example
 ![CSS Code Example](/images/css_code_example.png)
 
