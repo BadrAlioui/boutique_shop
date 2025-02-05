@@ -307,7 +307,7 @@ Here’s a step-by-step guide on how I did it:
 - **Install Required Packages**:
   Open Git Bash and run the following commands to install the necessary tools:
   ```bash
-  pip install gunicorn dj-database-url psycopg2 whitenoise python-decouple
+  pip install gunicorn dj-database-url psycopg2 whitenoise python-decouple django-heroku
 
 
 
