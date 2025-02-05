@@ -137,6 +137,13 @@ Ensure you have the following installed:
 ### Product Page
 ![Product Page](/images/products_page.png)
 
+### Payment Page
+![Product Page](/images/payment_product.png)
+
+### Login Page
+
+![Product Page](/images/screenshot_login_page.png)
+
 ### Edit Profile Page
 ![Edit Profile Page](/images/edit_profile_page.png)
 
