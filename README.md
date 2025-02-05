@@ -139,9 +139,15 @@ Ensure you have the following installed:
 ![Contact Page](/images/Screenshot_contact_page.png)
 
 ### Product Page
+
 ![Product Page](/images/products_page.png)
 
+### Product Detail
+
+![Product Detail Page](/images/screenshot_product_detail.png)
+
 ### Payment Page
+
 ![Product Page](/images/payment_product.png)
 
 ### Login Page
