@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Edit Your Review</h2>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="rating" class="form-label"><strong>Rating:</strong></label>
+            {{ form.rating }}
+        </div>
+        <div class="mb-3">
+            <label for="comment" class="form-label"><strong>Comment:</strong></label>
+            {{ form.comment }}
+        </div>
+        <button type="submit" class="btn btn-primary">Update Review</button>
+        <a href="{% url 'product_detail' review.product.slug %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

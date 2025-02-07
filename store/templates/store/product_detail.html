@@ -32,22 +32,17 @@
             <p><strong>Rating:</strong> No rating available</p>
             {% endif %}
 
-
-
             {% if not user.is_authenticated %}
             <div class="alert alert-warning mt-4">
                 <strong>Note:</strong> You need to log in or create an account to add products to your cart.
                 <a href="{% url 'login' %}?next={{ request.path }}" class="alert-link">Log in</a> or
                 <a href="{% url 'register' %}" class="alert-link">Sign up</a> now.
             </div>
-            <a href="{% url 'login' %}?next={{ request.path }}" class="btn btn-secondary btn-lg w-100 mt-4" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Log in or create an account to add products to your cart">
+            <a href="{% url 'login' %}?next={{ request.path }}" class="btn btn-secondary btn-lg w-100 mt-4">
                 Log in to Add to Cart
             </a>
             {% else %}
-            <form
-                method="POST"
-                action="{% url 'process_payment' product.slug %}"
-            >
+            <form method="POST" action="{% url 'process_payment' product.slug %}">
                 {% csrf_token %}
                 <div class="form-group mb-3">
                     <label for="size"><strong>Select Size:</strong></label>
@@ -65,36 +60,46 @@
             {% endif %}
         </div>
     </div>
+
     <hr class="my-5" />
+    
+    <!-- Section des avis -->
     <h3 class="text-center">Customer Reviews</h3>
     <div class="reviews-section mt-4">
         {% if reviews %}
             {% for review in reviews %}
-            <div class="review mb-4 p-3 bg-light rounded">
-                <p>
-                    <strong>{{ review.user.username }}</strong> 
-                    <span class="text-warning">
-                        {% for _ in review.rating|to_range %}
-                            <i class="fas fa-star"></i>
-                        {% endfor %}
-                        {% for _ in 5|add:"-review.rating"|to_range %}
-                            <i class="far fa-star"></i>
-                        {% endfor %}
-                    </span>
-                    
-                    
-                </p>
-                <p>{{ review.comment }}</p>
-                <p class="text-muted">
-                    Reviewed on {{ review.created_at|date:"F d, Y" }}
-                </p>
+            <div class="review p-3 bg-light rounded shadow-sm mb-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <p class="mb-1"><strong>{{ review.user.username }}</strong></p>
+                        <p class="text-warning mb-1">
+                            {% for _ in review.rating|to_range %}
+                                <i class="fas fa-star"></i>
+                            {% endfor %}
+                            {% for _ in 5|add:"-review.rating"|to_range %}
+                                <i class="far fa-star"></i>
+                            {% endfor %}
+                        </p>
+                        <p class="mb-1">{{ review.comment }}</p>
+                        <p class="text-muted small">Reviewed on {{ review.created_at|date:"F d, Y" }}</p>
+                    </div>
+                    {% if review.user == request.user %}
+                    <div class="d-flex">
+                        <a href="{% url 'update_review' review.id %}" class="btn btn-sm btn-outline-warning me-2">
+                            <i class="fas fa-edit"></i> Edit
+                        </a>
+                        <a href="{% url 'delete_review' review.id %}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure you want to delete this review?');">
+                            <i class="fas fa-trash"></i> Delete
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
             </div>
             {% endfor %}
         {% else %}
-        <p class="text-muted">No reviews yet. Be the first to review this product!</p>
+            <p class="text-muted text-center">No reviews yet. Be the first to review this product!</p>
         {% endif %}
     </div>
-    
 
     <!-- Formulaire pour ajouter un avis -->
     {% if user.is_authenticated %}
@@ -132,22 +137,14 @@
         <div class="col-md-4">
             <div class="card mt-4">
                 <a href="{% url 'product_detail' related_product.slug %}">
-                    <img
-                        src="{{ related_product.image.url }}"
-                        alt="{{ related_product.title }}"
-                        class="card-img-top"
-                    />
+                    <img src="{{ related_product.image.url }}" alt="{{ related_product.title }}" class="card-img-top"/>
                 </a>
                 <div class="card-body">
                     <h5 class="card-title">{{ related_product.title }}</h5>
-                    <p class="card-text text-muted">
-                        ${{ related_product.price }}
-                    </p>
-                    <a
-                        href="{% url 'product_detail' related_product.slug %}"
-                        class="btn btn-outline-primary btn-sm"
-                        >View Details</a
-                    >
+                    <p class="card-text text-muted">${{ related_product.price }}</p>
+                    <a href="{% url 'product_detail' related_product.slug %}" class="btn btn-outline-primary btn-sm">
+                        View Details
+                    </a>
                 </div>
             </div>
         </div>

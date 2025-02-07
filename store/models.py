@@ -51,6 +51,7 @@ class Review(models.Model):
     rating = models.IntegerField(choices=[(i, i) for i in range(1, 6)])  # Note de 1 à 5
     comment = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True) 
 
     def __str__(self):
         return f"Review by {self.user.username} for {self.product.title}"
