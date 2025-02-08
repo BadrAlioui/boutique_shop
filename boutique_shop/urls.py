@@ -9,6 +9,7 @@ urlpatterns = [
     path('auth/', include('authenticate.urls')),
     path('', include('home.urls')),
     path('products/', include('store.urls')),
+    path('newsletter/', include('newsletter.urls')),
 ]
 
 if settings.DEBUG:
