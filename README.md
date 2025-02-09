@@ -6,15 +6,28 @@
 ## Table of Contents
 1. [About the Project](#about-the-project)
 2. [Objectives](#objectives)
-3. [Key Features](#key-features)
-4. [Technologies Used](#technologies-used)
-5. [Installation Guide](#installation-guide)
-6. [Screenshots](#screenshots)
-7. [SEO Strategy](#seo-strategy)
-8. [Testing](#testing)
-9. [Deployment](#deployment)
-10. [Future Enhancements](#future-enhancements)
-11. [Acknowledgements](#acknowledgements)
+3. [Project Overview](#project-overview)
+4. [Testing Overview](#testing-overview)
+5. [User Stories & Project Management](#user-stories--project-management)
+6. [Built With](#built-with)
+7. [Database Model](#database-model)
+8. [Bugs Resolved](#bugs-resolved)
+9. [Getting Started](#getting-started)
+   - [Prerequisites](#prerequisites)
+   - [Installation](#installation)
+10. [Screenshots](#screenshots)
+11. [Wireframes](#wireframes)
+12. [SEO Strategy](#seo-strategy)
+13. [Facebook Page for Boutique VitaleVibes](#facebook-page-for-boutique-vitalevibes)
+14. [Testing](#testing)
+15. [Code Quality](#code-quality)
+16. [HTML Coverage](#html-coverage)
+17. [Accessibility](#accessibility)
+18. [Deployment Guide](#deployment-guide-for-django-project-on-heroku-using-git-bash)
+19. [Future Enhancements](#future-enhancements)
+20. [Acknowledgements](#acknowledgements)
+21. [References](#references)
+
 
 ---
 
@@ -30,6 +43,58 @@ Boutique-Ecommerce is a user-friendly online store designed to provide a seamles
 - Allow customers to browse, search, and purchase products effortlessly.
 - Provide administrators with tools to manage the store effectively.
 - Ensure the platform is fully responsive across all devices.
+
+---
+
+## Project Overview
+
+This Django project is organized into several apps, each handling a specific set of features:
+
+### Authentication (`authenticate` app)
+- **Features:**
+  - Manages user login, logout, registration, password changes, profile editing, and account deletion.
+  - Utilizes custom forms like `SignUpForm` and `EditProfileForm` along with Django’s built-in authentication system.
+- **Tests:**
+  - Comprehensive tests ensure that all authentication views (login, logout, registration, etc.) work as expected.
+
+### Home (`home` app)
+- **Features:**
+  - Contains the homepage and a contact page.
+  - The contact page has a form that sends emails using Django’s email system.
+- **Tests:**
+  - Tests verify that both the homepage and contact page render correctly and that the contact form properly sends emails.
+
+### Newsletter (`newsletter` app)
+- **Features:**
+  - Allows users to subscribe to the newsletter.
+  - Sends a welcome email when someone subscribes.
+  - Prevents duplicate subscriptions and validates email addresses.
+- **Tests:**
+  - Tests ensure that subscriptions are handled correctly, duplicate entries are blocked, and invalid emails are rejected.
+
+### Store (`store` app)
+- **Features:**
+  - Lets users browse products, view detailed product pages, and submit reviews.
+  - Provides admin functionality to add, update, or delete products.
+  - Integrates with Stripe for payment processing.
+  - Manages orders and processes refund requests.
+  - Uses Cloudinary to handle product images.
+- **Models & Validations:**
+  - **Category:** Organizes products into groups.
+  - **Product:** Manages product details, including stock and price validations.
+  - **Review:** Allows users to rate and comment on products.
+  - **Order:** Tracks order details and statuses.
+  - **Refund:** Handles refund requests and tracks their status.
+- **Tests:**
+  - Extensive tests cover forms (e.g., `ProductForm`, `ReviewForm`, `RefundForm`), model validations, and view functionality (product listing, payment processing, refund requests, etc.).
+
+## Testing Overview
+
+The project includes a robust test suite that covers:
+- **View Tests:** To ensure every page (authentication, home, newsletter, and store) loads correctly and behaves as expected.
+- **Form Tests:** To validate both correct and erroneous input cases.
+- **Model Tests:** To check model relationships and custom validations.
+- **Integration Tests:** To simulate complete user workflows—such as payment processing and refund requests—while integrating with external services like Stripe and email systems.
 
 ---
 
@@ -68,30 +133,6 @@ This project uses modern technologies to ensure functionality and scalability:
 The database model has been designed using drawsql. The type of database being used is a relational database managed with SQLite3 during development and deployed using PostgreSQL.
 
 ![Database Model](/images/database_model.png)
-
----
-
-## Key Features
-
-- **Product Browsing**: View detailed product descriptions, prices, and images.
-- **User Authentication**: Register, log in, and manage accounts securely.
-- **Order Management**: Place orders and track them in the user dashboard.
-- **Admin Panel**: Manage inventory, orders, and user accounts efficiently.
-- **Responsive Design**: Optimized for mobile, tablet, and desktop devices.
-- **Integrated Payment System**: (Planned for future development).
-
----
-
-## **Authentication**
-
-In this project, Django's built-in authentication system makes it easy for users to sign up, log in, and log out securely. Once logged in, users can:
-
-- Update their profile information.
-- View and manage their orders.
-- Request refunds for eligible purchases.
-- Edit or even delete their accounts if they choose.
-
-Django takes care of the heavy lifting, like password security and session management, so everything stays safe and reliable. This way, users have a smooth and secure experience while interacting with the site.
 
 ---
 
