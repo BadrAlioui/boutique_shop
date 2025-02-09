@@ -311,3 +311,6 @@ def delete_review(request, review_id):
         return redirect("product_detail", slug=review.product.slug)
 
     return render(request, "store/delete_review.html", {"review": review})
+
+def privacy_policy(request):
+    return render(request, 'store/privacy_policy.html')
