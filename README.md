@@ -124,6 +124,10 @@ GitHub Projects was used as my project management tool to track user stories. Us
 
 ![sprint1](/images/sprint3.png)
 
+#### Sprint4
+
+![sprint4](/images/sprint4.png)
+
 ## Built With
 
 This project uses modern technologies to ensure functionality and scalability:
