@@ -73,11 +73,8 @@ def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug)
     reviews = product.reviews.all()
     average_rating = reviews.aggregate(Avg('rating'))['rating__avg']
-    context = {
-        'product': product,
-        'reviews': reviews,
-        'average_rating': round(average_rating, 1) if average_rating else None,
-    }
+    form = ReviewForm()
+    
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
@@ -87,10 +84,16 @@ def product_detail(request, slug):
             review.save()
             messages.success(request, "Your review has been submitted successfully!")
             return redirect('product_detail', slug=product.slug)
-    else:
-        form = ReviewForm()
-
+    
+    context = {
+        'product': product,
+        'reviews': reviews,
+        'average_rating': round(average_rating, 1) if average_rating else None,
+        'form': form,
+    }
+    
     return render(request, 'store/product_detail.html', context)
+
 
 
 @user_passes_test(admin_required)
