@@ -88,6 +88,16 @@ This Django project is organized into several apps, each handling a specific set
 - **Tests:**
   - Extensive tests cover forms (e.g., `ProductForm`, `ReviewForm`, `RefundForm`), model validations, and view functionality (product listing, payment processing, refund requests, etc.).
 
+### User Registration & Seamless Checkout
+
+Our registration process is designed with your convenience in mind. When users sign up, they’re asked to enter their shipping address right away. This means that when it’s time to check out, their delivery details are already saved, making the entire ordering process fast and hassle-free.
+
+This feature helps to:
+- Simplify checkout by eliminating the need to re-enter shipping information.
+- Enhance the overall user experience.
+- Save time, reducing friction during the ordering process.
+
+
 ## Testing Overview
 
 The project includes a robust test suite that covers:
