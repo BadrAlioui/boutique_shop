@@ -187,7 +187,7 @@ During the development and deployment of this project, the following major bugs 
 - **Problem**: CSS files were not loading on `localhost` because the `collectstatic` command had not been run.
 - **Solution**: The following command was executed to collect all static files:
   ```bash
-  python manage.py collectstatic
+  python manage.py collectstatic´´´
 
 ---
 
