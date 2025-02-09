@@ -33,6 +33,22 @@ Boutique-Ecommerce is a user-friendly online store designed to provide a seamles
 
 ---
 
+## User Stories & Project Management
+
+GitHub Projects was used as my project management tool to track user stories. Using a Kanban board helped me focus on specific tasks and monitor the progress of the project efficiently. You can view the board [here](https://github.com/users/BadrAlioui/projects/9).
+
+#### Sprint1
+
+![sprint1](/images/sprint1.png)
+
+#### Sprint2
+
+![sprint1](/images/sprint2.png)
+
+#### Sprint3
+
+![sprint1](/images/sprint3.png)
+
 ## Built With
 
 This project uses modern technologies to ensure functionality and scalability:
