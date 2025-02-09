@@ -18,16 +18,16 @@
 10. [Screenshots](#screenshots)
 11. [Wireframes](#wireframes)
 12. [SEO Strategy](#seo-strategy)
-13. [Facebook Page for Boutique VitaleVibes](#facebook-page-for-boutique-vitalevibes)
-14. [Testing](#testing)
-15. [Code Quality](#code-quality)
-16. [HTML Coverage](#html-coverage)
-17. [Accessibility](#accessibility)
-18. [Deployment Guide](#deployment-guide-for-django-project-on-heroku-using-git-bash)
-19. [Future Enhancements](#future-enhancements)
-20. [Acknowledgements](#acknowledgements)
-21. [References](#references)
-
+13. [Marketing Strategy](#marketing-strategy)
+14. [Facebook Page for Boutique VitaleVibes](#facebook-page-for-boutique-vitalevibes)
+15. [Testing](#testing)
+16. [Code Quality](#code-quality)
+17. [HTML Coverage](#html-coverage)
+18. [Accessibility](#accessibility)
+19. [Deployment Guide](#deployment-guide-for-django-project-on-heroku-using-git-bash)
+20. [Future Enhancements](#future-enhancements)
+21. [Acknowledgements](#acknowledgements)
+22. [References](#references)
 
 ---
 
@@ -276,6 +276,72 @@ Ensure you have the following installed:
 - **Clean URLs**: Easy-to-read and SEO-friendly URLs.
 - **Alt Text**: Descriptive alt attributes for images.
 - **Optimized Headings**: Structured headings for better content readability.
+
+---
+
+## Marketing Strategy
+
+### Search Engine Optimization (SEO)
+
+To boost our search engine rankings on Google, we performed extensive keyword research using tools like Google Keyword Planner and SEMrush. We identified keywords that represent our brand, "Boutique VitaleVibes," and current fashion trends, integrating them into meta tags and throughout our website content.
+
+**Targeted Keywords:**
+- Boutique VitaleVibes
+- Trendy fashion online
+- Affordable stylish clothes
+- Modern e-commerce fashion
+- Shop latest trends online
+- Sustainable fashion
+
+These keywords are continuously monitored using analytics tools to ensure our content remains relevant and drives organic traffic.
+
+### Business Model
+
+**Company Description:**  
+Boutique VitaleVibes is a B2C online store dedicated to offering trendy and affordable fashion products. Our mission is to provide a seamless shopping experience with a carefully curated collection, secure payment options, and exceptional customer service.
+
+**Customers:**  
+Our target audience includes fashion-forward millennials and Gen Z, as well as families who value style and affordability. These customers are constantly seeking the latest trends and value a user-friendly online shopping experience.
+
+**Competitors:**  
+We face competition from:
+- Niche online boutiques that focus on specific fashion trends.
+- Large online retailers offering a wide range of fashion items.
+- General marketplaces where finding a curated and unique collection can be challenging.
+
+### SWOT Analysis
+
+- **Strengths:**
+  - A carefully curated selection of trendy and affordable fashion items.
+  - A user-friendly, responsive website with a seamless shopping experience.
+  - Robust order management and secure payment processing.
+- **Weaknesses:**
+  - As a newer brand, we are still building market recognition.
+  - A limited marketing budget compared to established competitors.
+- **Opportunities:**
+  - Growing consumer interest in sustainable and ethically sourced fashion.
+  - Increasing online shopping trends among younger consumers.
+  - Opportunities for collaboration with fashion influencers and bloggers.
+- **Threats:**
+  - Intense competition from well-established brands and large online retailers.
+  - Potential challenges in supply chain management and shipping logistics.
+  - Rapid changes in fashion trends that could impact our inventory.
+
+### Marketing Strategy
+
+Given our limited marketing budget, Boutique VitaleVibes focuses on cost-effective strategies that maximize our reach:
+- **Social Media Engagement:**  
+  We maintain an active presence on Facebook and Instagram, sharing updates, new arrivals, behind-the-scenes content, and engaging with our community.
+- **Newsletter Campaigns:**  
+  We encourage visitors to subscribe to our newsletter, offering exclusive discounts, style tips, and early access to new collections, thereby fostering customer loyalty.
+- **Influencer Collaborations:**  
+  Partnering with fashion influencers and bloggers helps us expand our reach, build credibility, and attract new customers.
+- **Word of Mouth:**  
+  We leverage customer reviews and testimonials to build trust and encourage organic sharing of our brand.
+- **Content Marketing:**  
+  Through regular blog posts, style guides, and fashion tips, we provide valuable content that not only enhances user engagement but also improves our SEO performance.
+
+By continuously monitoring our marketing efforts and refining our strategies, we aim to increase our online visibility and drive sustainable growth for Boutique VitaleVibes.
 
 ---
 
