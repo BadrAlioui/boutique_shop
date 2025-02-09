@@ -2,6 +2,22 @@
 
 ![Home Page](/images/responsive.png)
 
+
+## Table of Contents
+1. [About the Project](#about-the-project)
+2. [Objectives](#objectives)
+3. [Key Features](#key-features)
+4. [Technologies Used](#technologies-used)
+5. [Installation Guide](#installation-guide)
+6. [Screenshots](#screenshots)
+7. [SEO Strategy](#seo-strategy)
+8. [Testing](#testing)
+9. [Deployment](#deployment)
+10. [Future Enhancements](#future-enhancements)
+11. [Acknowledgements](#acknowledgements)
+
+---
+
 ## About the Project
 
 Boutique-Ecommerce is a user-friendly online store designed to provide a seamless shopping experience. Customers can explore a variety of products, manage their profiles, and make purchases with ease. The platform also includes an admin panel for managing inventory, users, and orders efficiently.

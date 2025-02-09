@@ -22,6 +22,6 @@ urlpatterns = [
     path('refunds/status/<int:refund_id>/',
          views.refund_status, name='refund_status'),
     path('review/update/<int:review_id>/', views.update_review, name="update_review"),
-     path('review/delete/<int:review_id>/', views.delete_review, name="delete_review"),
+    path('review/delete/<int:review_id>/', views.delete_review, name="delete_review"),
 
 ]

@@ -15,4 +15,7 @@ admin.site.register(Category, CategoryAdmin)
 
 admin.site.register(Product, ProductAdmin)
 
-admin.site.register(Order)
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ('user', 'product', 'status', 'date', 'reference')
+    search_fields = ('user__username', 'product__title', 'reference')
