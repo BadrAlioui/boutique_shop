@@ -63,6 +63,14 @@ This project uses modern technologies to ensure functionality and scalability:
 
 ---
 
+## Database Model
+
+The database model has been designed using drawsql. The type of database being used is a relational database managed with SQLite3 during development and deployed using PostgreSQL.
+
+![Database Model](/images/database_model.png)
+
+---
+
 ## Key Features
 
 - **Product Browsing**: View detailed product descriptions, prices, and images.
