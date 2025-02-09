@@ -34,6 +34,11 @@ body {
     padding: 0;
 }
 
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .delete-account {
     
     margin: 200px auto;
@@ -101,12 +106,13 @@ body {
 /* Card  */
 
 .card {
-    height: 650px; /* Fixe une hauteur uniforme pour toutes les cartes */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Répartit le contenu verticalement */
-    margin-bottom: 20px;
+    height: auto;
+    overflow: hidden;
+    max-width: 100%;
+    padding: 20px;
 }
+
+
 
 .card-body {
     flex-grow: 1; /* Permet au contenu de remplir l'espace disponible */
