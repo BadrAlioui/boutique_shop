@@ -31,7 +31,7 @@ class EditProfileForm(forms.ModelForm):
         max_length=255,
         required=False,
         widget=forms.TextInput(attrs={'class': 'form-control',
-                                      'placeholder': 'Enter your address'}),
+                                      'placeholder': 'Enter your shipping address'}),
     )
 
     class Meta:
@@ -86,7 +86,7 @@ class SignUpForm(UserCreationForm):
         max_length=255,
         required=False,
         widget=forms.TextInput(attrs={"class": "form-control",
-                                      "placeholder": "Enter your address"})
+                                      "placeholder": "Enter your shipping address"})
     )
     password1 = forms.CharField(
         widget=forms.PasswordInput(attrs={"class": "form-control",
