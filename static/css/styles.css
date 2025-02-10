@@ -38,6 +38,10 @@ body {
     margin: 0 auto;
 }
 
+.container .lead{
+    color:#343a40;
+}
+
 .delete-account {
     
     margin: 200px auto;
