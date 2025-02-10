@@ -502,9 +502,24 @@ Sometimes, scripts may contain more characters than expected, but I’m leaving 
 
 ---
 
-## HTML Coverage
+### Test Coverage
 
-To ensure code robustness, here’s the HTML coverage report:
+We’ve built a robust suite of tests to catch bugs early and ensure our code works as expected. Our current overall test coverage is **84%**, meaning that 84% of our code is exercised during testing.
+
+**What This Means:**
+
+- **Strong Coverage in Key Areas:**  
+  Many core features—like authentication views, forms, and essential utility functions—are tested extensively (mostly 90% or above). This gives us confidence in their reliability.
+
+- **Fully Tested Modules:**  
+  Several parts of the application, including our models, migrations, and some helper modules, are 100% covered by tests.
+
+- **Areas for Improvement:**  
+  Some files, such as `store/views.py` (with 40% coverage), show opportunities for adding more tests. We’re committed to improving these areas as the project evolves.
+
+By continuously monitoring and enhancing our test coverage, we strive to maintain high code quality and ensure that our project remains stable and maintainable as new features are added.
+
+here’s the HTML coverage report:
 ![HTML Coverage](/images/coverage_report.png)
 
 
