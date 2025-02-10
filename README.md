@@ -424,12 +424,12 @@ Sometimes, scripts may contain more characters than expected, but I’m leaving 
 
 ![HTML Edit Profile](/images/validator_edit_profile.png)
 
-### Register Page
+#### Register Page
 
 ![HTML Register Page](/images/Screenshot_register_page.png)
 
 
-### Product Page
+#### Product Page
 
 ![HTML Register Page](/images/Screenshot_validator_product_page.png)
 
@@ -494,11 +494,7 @@ Sometimes, scripts may contain more characters than expected, but I’m leaving 
 
 ![HTML Register Page](/images/Screenshot_validator_request_status.png)
 
-
-
-
-
-
+---
 
 ### CSS Code Example
 ![CSS Code Example](/images/css_code_example.png)
