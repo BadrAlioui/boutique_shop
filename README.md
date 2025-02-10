@@ -204,25 +204,37 @@ Ensure you have the following installed:
 ### Home Page
 ![Home Page](/images/home_page.png)
 
+---
+
 ### Contact Page
 
 ![Contact Page](/images/Screenshot_contact_page.png)
+
+---
 
 ### Product Page
 
 ![Product Page](/images/products_page.png)
 
+---
+
 ### Product Detail
 
 ![Product Detail Page](/images/screenshot_product_detail.png)
+
+---
 
 ### Payment Page
 
 ![Product Page](/images/payment_product.png)
 
+---
+
 ### Login Page
 
 ![Product Page](/images/screenshot_login_page.png)
+
+---
 
 ### Edit Profile Page
 ![Edit Profile Page](/images/edit_profile_page.png)
@@ -233,6 +245,8 @@ Ensure you have the following installed:
 ## wireframes
 
 ![wireframes](/images/wireframe-boutique.png)
+
+---
 
 ## SEO Strategy
 
@@ -339,6 +353,7 @@ As part of my content marketing strategy, I created a dedicated Facebook page to
 
 By integrating Facebook into my marketing strategy, I aim to connect with potential customers where they are most active and strengthen Boutique VitaleVibes's online presence.
 
+---
 
 ## Testing
 
@@ -365,8 +380,12 @@ By integrating Facebook into my marketing strategy, I aim to connect with potent
 
 Sometimes, scripts may contain more characters than expected, but I’m leaving it that way for an improved experience for advanced users
 
+---
+
 ### JavaScript Code Example
 ![JavaScript Code Example](/images/javascript_code_example.png)
+
+---
 
 ### HTML Code Examples
 
@@ -395,17 +414,15 @@ Sometimes, scripts may contain more characters than expected, but I’m leaving 
 
 ![HTML Register Page](/images/Screenshot_validator_product_page.png)
 
-### Product Detail Page
+#### Product Detail Page
 
 ![HTML Register Page](/images/Screenshot_validator_product_detail.png)
 
-### Add Product Page
+#### Add Product Page
 
 ![HTML Register Page](/images/Screenshot_validator_add_product.png)
 
-#### Test Home Page Html
 
-![HTML Home Page](/images/home_page_html.png)
 
 #### Test Login Page Html
 
