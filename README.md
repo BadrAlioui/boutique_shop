@@ -429,6 +429,78 @@ Sometimes, scripts may contain more characters than expected, but I’m leaving 
 ![HTML Register Page](/images/Screenshot_register_page.png)
 
 
+### Product Page
+
+![HTML Register Page](/images/Screenshot_validator_product_page.png)
+
+### Product Detail Page
+
+![HTML Register Page](/images/Screenshot_validator_product_detail.png)
+
+### Add Product Page
+
+![HTML Register Page](/images/Screenshot_validator_add_product.png)
+
+### HTML Code Examples
+
+#### Test Home Page Html
+
+![HTML Home Page](/images/home_page_html.png)
+
+#### Test Login Page Html
+
+![HTML Login Page](/images/validator_login.png)
+
+#### Test Delete Profile Html
+
+![HTML Edit Profile](/images/validator_delete_account.png)
+
+#### Test Edit Profile Html
+
+![HTML Edit Profile](/images/validator_edit_profile.png)
+
+#### Register Page
+
+![HTML Register Page](/images/Screenshot_register_page.png)
+
+
+#### Product Page
+
+![HTML Register Page](/images/Screenshot_validator_product_page.png)
+
+#### Product Detail Page
+
+![HTML Register Page](/images/Screenshot_validator_product_detail.png)
+
+#### Delete Product Page
+
+![HTML Register Page](/images/Screenshot_validator_delete_product.png)
+
+#### Update Product Page
+
+![HTML Register Page](/images/Screenshot_validator_edit_product.png)
+
+#### Update Review Page
+
+![HTML Register Page](/images/Screenshot_validator_edit_review.png)
+
+#### Delete Review Page
+
+![HTML Register Page](/images/Screenshot_validator_delete_review.png)
+
+#### Request Fund Page
+
+![HTML Register Page](/images/Screenshot_validator_request_refund.png)
+
+#### Request Status Page
+
+![HTML Register Page](/images/Screenshot_validator_request_status.png)
+
+
+
+
+
+
 
 ### CSS Code Example
 ![CSS Code Example](/images/css_code_example.png)
