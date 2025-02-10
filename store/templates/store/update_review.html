@@ -1,21 +1,37 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% load widget_tweaks %}
 
 {% block content %}
-<div class="container mt-5">
-    <h2>Edit Your Review</h2>
-    
-    <form method="POST">
-        {% csrf_token %}
-        <div class="mb-3">
-            <label for="rating" class="form-label"><strong>Rating:</strong></label>
-            {{ form.rating }}
-        </div>
-        <div class="mb-3">
-            <label for="comment" class="form-label"><strong>Comment:</strong></label>
-            {{ form.comment }}
-        </div>
-        <button type="submit" class="btn btn-primary">Update Review</button>
-        <a href="{% url 'product_detail' review.product.slug %}" class="btn btn-secondary">Cancel</a>
-    </form>
+<div class="container mt-5 mb-5" style="max-width: 800px;">
+    <div class="card p-4 shadow-lg" style="height: auto;">
+        <h2 class="text-center mb-4 text-primary">Edit Your Review</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="mb-4">
+                <label for="{{ field.id_for_label }}" class="form-label">
+                    <strong>{{ field.label }}</strong>
+                </label>
+                <div>
+                    {{ field|add_class:"form-control" }}
+                </div>
+                {% if field.help_text %}
+                <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+                {% if field.errors %}
+                <div class="text-danger small">{{ field.errors }}</div>
+                {% endif %}
+            </div>
+            {% endfor %}
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary btn-lg">
+                    <i class="fas fa-edit"></i> Update Review
+                </button>
+                <a href="{% url 'product_detail' review.product.slug %}" class="btn btn-secondary btn-lg">
+                    Cancel
+                </a>
+            </div>
+        </form>
+    </div>
 </div>
 {% endblock %}

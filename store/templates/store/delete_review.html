@@ -1,16 +1,30 @@
 {% extends "base.html" %}
+{% load widget_tweaks %}
 
 {% block content %}
-<div class="container mt-5">
-    <h2>Delete Your Review</h2>
-    <p>Are you sure you want to delete this review?</p>
-    <p><strong>Rating:</strong> {{ review.rating }}/5</p>
-    <p><strong>Comment:</strong> {{ review.comment }}</p>
-    
-    <form method="POST">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-danger">Delete</button>
-        <a href="{% url 'product_detail' review.product.slug %}" class="btn btn-secondary">Cancel</a>
-    </form>
+<div class="container mt-5 mb-5" style="max-width: 800px;">
+  <div class="card p-4 shadow-lg">
+    <div class="card-header text-center">
+      <h2 class="text-danger">Delete Your Review</h2>
+    </div>
+    <div class="card-body">
+      <p class="text-center mb-4">Are you sure you want to delete this review?</p>
+      <div class="mb-3">
+        <p><strong>Rating:</strong> {{ review.rating }}/5</p>
+        <p><strong>Comment:</strong> {{ review.comment }}</p>
+      </div>
+      <div class="d-flex justify-content-between">
+        <form method="POST" class="w-50">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger btn-lg w-100">
+            <i class="fas fa-trash-alt"></i> Delete
+          </button>
+        </form>
+        <a href="{% url 'product_detail' review.product.slug %}" class="btn btn-secondary btn-lg w-50 ms-3">
+          Cancel
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}

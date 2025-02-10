@@ -1,13 +1,16 @@
 {% extends "base.html" %}
-
 {% block content %}
 <div class="container mt-5">
-    <h2>Request a Refund</h2>
-    <p>Order ID: {{ order.id }}</p>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-danger">Submit Refund Request</button>
-    </form>
+    <div class="card" style="max-width: 600px; margin: auto;">
+        <div class="card-body">
+            <h2 class="card-title text-center">Request a Refund</h2>
+            <p>Order ID: {{ order.id }}</p>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-danger w-100">Submit Refund Request</button>
+            </form>
+        </div>
+    </div>
 </div>
 {% endblock %}
