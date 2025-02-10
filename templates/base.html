@@ -235,9 +235,10 @@
                     <p>Get exclusive offers, latest updates, and special discounts directly in your inbox.</p>
                     <form action="{% url 'subscribe_newsletter' %}" method="POST" class="newsletter-form d-flex justify-content-center">
                         {% csrf_token %}
-                        <input type="email" name="email" placeholder="Enter your email" class="form-control w-50 me-2" required>
+                        <label for="newsletter-email" class="visually-hidden">Email address</label>
+                        <input id="newsletter-email" type="email" name="email" placeholder="Enter your email" class="form-control w-50 me-2" required>
                         <button type="submit" class="btn btn-primary">Subscribe</button>
-                    </form>
+                    </form>                    
                 </div>
         
                 <hr class="bg-white">
