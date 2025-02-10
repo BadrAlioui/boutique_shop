@@ -2,32 +2,26 @@
 
 ![Home Page](/images/responsive.png)
 
-
 ## Table of Contents
 1. [About the Project](#about-the-project)
 2. [Objectives](#objectives)
 3. [Project Overview](#project-overview)
-4. [Testing Overview](#testing-overview)
-5. [User Stories & Project Management](#user-stories--project-management)
-6. [Built With](#built-with)
-7. [Database Model](#database-model)
-8. [Bugs Resolved](#bugs-resolved)
-9. [Getting Started](#getting-started)
+4. [User Stories & Project Management](#user-stories--project-management)
+5. [Built With](#built-with)
+6. [Database Model](#database-model)
+7. [Bugs Resolved](#bugs-resolved)
+8. [Getting Started](#getting-started)
    - [Prerequisites](#prerequisites)
    - [Installation](#installation)
-10. [Screenshots](#screenshots)
-11. [Wireframes](#wireframes)
-12. [SEO Strategy](#seo-strategy)
-13. [Marketing Strategy](#marketing-strategy)
-14. [Facebook Page for Boutique VitaleVibes](#facebook-page-for-boutique-vitalevibes)
-15. [Testing](#testing)
-16. [Code Quality](#code-quality)
-17. [HTML Coverage](#html-coverage)
-18. [Accessibility](#accessibility)
-19. [Deployment Guide](#deployment-guide-for-django-project-on-heroku-using-git-bash)
-20. [Future Enhancements](#future-enhancements)
-21. [Acknowledgements](#acknowledgements)
-22. [References](#references)
+9. [Screenshots](#screenshots)
+10. [Wireframes](#wireframes)
+11. [SEO & Marketing](#seo--marketing)
+12. [Testing, Code Quality & Coverage](#testing-code-quality--coverage)
+13. [Accessibility](#accessibility)
+14. [Deployment Guide](#deployment-guide)
+15. [Future Enhancements](#future-enhancements)
+16. [Acknowledgements](#acknowledgements)
+17. [References](#references)
 
 ---
 
@@ -53,32 +47,32 @@ This Django project is organized into several apps, each handling a specific set
 ### Authentication (`authenticate` app)
 - **Features:**
   - Manages user login, logout, registration, password changes, profile editing, and account deletion.
-  - Utilizes custom forms like `SignUpForm` and `EditProfileForm` along with Django’s built-in authentication system.
+  - Uses custom forms (e.g., `SignUpForm`, `EditProfileForm`) along with Django’s built-in authentication system.
 - **Tests:**
-  - Comprehensive tests ensure that all authentication views (login, logout, registration, etc.) work as expected.
+  - Comprehensive tests ensure that all authentication views function as expected.
 
 ### Home (`home` app)
 - **Features:**
   - Contains the homepage and a contact page.
-  - The contact page has a form that sends emails using Django’s email system.
+  - The contact page includes a form for sending emails via Django’s email system.
 - **Tests:**
-  - Tests verify that both the homepage and contact page render correctly and that the contact form properly sends emails.
+  - Tests verify that the homepage and contact page render correctly and that the form works properly.
 
 ### Newsletter (`newsletter` app)
 - **Features:**
   - Allows users to subscribe to the newsletter.
-  - Sends a welcome email when someone subscribes.
+  - Sends a welcome email upon subscription.
   - Prevents duplicate subscriptions and validates email addresses.
 - **Tests:**
-  - Tests ensure that subscriptions are handled correctly, duplicate entries are blocked, and invalid emails are rejected.
+  - Tests ensure proper handling of subscriptions and email validations.
 
 ### Store (`store` app)
 - **Features:**
-  - Lets users browse products, view detailed product pages, and submit reviews.
+  - Enables users to browse products, view detailed product pages, and submit reviews.
   - Provides admin functionality to add, update, or delete products.
   - Integrates with Stripe for payment processing.
   - Manages orders and processes refund requests.
-  - Uses Cloudinary to handle product images.
+  - Uses Cloudinary for handling product images.
 - **Models & Validations:**
   - **Category:** Organizes products into groups.
   - **Product:** Manages product details, including stock and price validations.
@@ -86,65 +80,51 @@ This Django project is organized into several apps, each handling a specific set
   - **Order:** Tracks order details and statuses.
   - **Refund:** Handles refund requests and tracks their status.
 - **Tests:**
-  - Extensive tests cover forms (e.g., `ProductForm`, `ReviewForm`, `RefundForm`), model validations, and view functionality (product listing, payment processing, refund requests, etc.).
+  - Extensive tests cover forms, model validations, and view functionality.
 
 ### User Registration & Seamless Checkout
-
-Our registration process is designed with your convenience in mind. When users sign up, they’re asked to enter their shipping address right away. This means that when it’s time to check out, their delivery details are already saved, making the entire ordering process fast and hassle-free.
-
-This feature helps to:
-- Simplify checkout by eliminating the need to re-enter shipping information.
-- Enhance the overall user experience.
-- Save time, reducing friction during the ordering process.
-
-
-## Testing Overview
-
-The project includes a robust test suite that covers:
-- **View Tests:** To ensure every page (authentication, home, newsletter, and store) loads correctly and behaves as expected.
-- **Form Tests:** To validate both correct and erroneous input cases.
-- **Model Tests:** To check model relationships and custom validations.
-- **Integration Tests:** To simulate complete user workflows—such as payment processing and refund requests—while integrating with external services like Stripe and email systems.
+Our registration process is designed for convenience. When users sign up, they’re asked to enter their shipping address so that during checkout their delivery details are already saved. This approach:
+- Simplifies checkout by eliminating the need to re-enter shipping information.
+- Enhances the overall user experience.
+- Saves time and reduces friction during the ordering process.
 
 ---
 
 ## User Stories & Project Management
 
-GitHub Projects was used as my project management tool to track user stories. Using a Kanban board helped me focus on specific tasks and monitor the progress of the project efficiently. You can view the board [here](https://github.com/users/BadrAlioui/projects/9).
+We used GitHub Projects as our project management tool to track user stories via a Kanban board. This helped us focus on specific tasks and monitor project progress.
+
+- **View the board [here](https://github.com/users/BadrAlioui/projects/9).**
 
 #### Sprint1
-
-![sprint1](/images/sprint1.png)
+![Sprint1](/images/sprint1.png)
 
 #### Sprint2
-
-![sprint1](/images/sprint2.png)
+![Sprint2](/images/sprint2.png)
 
 #### Sprint3
-
-![sprint1](/images/sprint3.png)
+![Sprint3](/images/sprint3.png)
 
 #### Sprint4
+![Sprint4](/images/sprint4.png)
 
-![sprint4](/images/sprint4.png)
+---
 
 ## Built With
 
-This project uses modern technologies to ensure functionality and scalability:
-
-- **Python**: Backend logic and data handling.
-- **Django**: Framework for rapid and robust development.
-- **HTML5**: Semantic structure and content.
-- **CSS3**: Responsive styling.
-- **JavaScript**: Interactive elements.
-- **PostgreSQL**: Database for storing data.
-- **Bootstrap**: Modern and responsive user interface.
+- **Python** – Backend logic and data handling.
+- **Django** – Rapid and robust web framework.
+- **HTML5** – Semantic structure.
+- **CSS3** – Responsive styling.
+- **JavaScript** – Interactive elements.
+- **PostgreSQL** – Production database.
+- **Bootstrap** – Modern, responsive UI.
 
 ---
 
 ## Database Model
 
-The database model has been designed using drawsql. The type of database being used is a relational database managed with SQLite3 during development and deployed using PostgreSQL.
+The database model was designed using [drawsql](https://drawsql.app/). We use SQLite3 during development and PostgreSQL in production.
 
 ![Database Model](/images/database_model.png)
 
@@ -152,42 +132,24 @@ The database model has been designed using drawsql. The type of database being u
 
 ## Bugs Resolved
 
-During the development and deployment of this project, the following major bugs were encountered and resolved:
+### 1. IP Address Mismatch on Heroku
+- **Problem:** Deployment failures due to an "IP address mismatch" error.
+- **Solution:** Removed `django_heroku.settings(locals())` from `settings.py` to prevent conflicts.
+- **Outcome:** Deployment now works flawlessly.
 
-### **1. IP Address Mismatch on Heroku**
-- **Problem**: While deploying the application on Heroku, an "IP address mismatch" error occurred, causing deployment failures.
-- **Solution**: 
-  - The issue was resolved by removing the following line from `settings.py`:
-    ```python
-    django_heroku.settings(locals())
-    ```
-  - This line was causing unnecessary configurations to override the local settings, leading to conflicts during deployment.
-- **Outcome**: Once removed, the deployment worked flawlessly.
+### 2. Media Files Not Persisting on Heroku
+- **Problem:** Uploaded images were lost due to Heroku’s ephemeral file system.
+- **Solution:** Integrated Cloudinary for external storage:
+  - Installed `django-cloudinary-storage`
+  - Configured Cloudinary in `settings.py`
+- **Outcome:** Media files are now permanently stored and reliably served.
 
-### **2. Media Files Not Persisting on Heroku**
-- **Problem**: Images uploaded to the platform were lost after deployments or server restarts due to Heroku’s ephemeral file system.
-- **Solution**: Cloudinary was integrated for external storage of media files:
-  - Installed `django-cloudinary-storage`:
-    ```bash
-    pip install django-cloudinary-storage
-    ```
-  - Configured Cloudinary in `settings.py`:
-    ```python
-    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-    cloudinary.config(
-        cloud_name='your_cloud_name',
-        api_key='your_api_key',
-        api_secret='your_api_secret'
-    )
-    ```
-  - Media files are now securely stored in the cloud.
-- **Outcome**: Media files are permanently stored and reliably served, even after redeployments.
-
-### **3. CSS Not Loading Locally**
-- **Problem**: CSS files were not loading on `localhost` because the `collectstatic` command had not been run.
-- **Solution**: The following command was executed to collect all static files:
+### 3. CSS Not Loading Locally
+- **Problem:** CSS files were not loading on `localhost` because the `collectstatic` command had not been run.
+- **Solution:** Ran:
   ```bash
   python manage.py collectstatic```
+
 
 ---
 
