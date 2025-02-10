@@ -441,8 +441,6 @@ Sometimes, scripts may contain more characters than expected, but I’m leaving 
 
 ![HTML Register Page](/images/Screenshot_validator_add_product.png)
 
-### HTML Code Examples
-
 #### Test Home Page Html
 
 ![HTML Home Page](/images/home_page_html.png)
