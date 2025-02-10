@@ -267,7 +267,7 @@ Ensure you have the following installed:
 
 ### Register Page
 
-![HTML Register Page](/images/register_page.png)
+![HTML Register Page](/images/Screenshot_register_page.png)
 
 ---
 
