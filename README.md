@@ -265,9 +265,6 @@ Ensure you have the following installed:
 ### Edit Profile Page
 ![Edit Profile Page](/images/edit_profile_page.png)
 
-### Register Page
-
-![HTML Register Page](/images/Screenshot_register_page.png)
 
 ---
 
@@ -426,6 +423,10 @@ Sometimes, scripts may contain more characters than expected, but I’m leaving 
 #### Test Edit Profile Html
 
 ![HTML Edit Profile](/images/validator_edit_profile.png)
+
+### Register Page
+
+![HTML Register Page](/images/Screenshot_register_page.png)
 
 
 
