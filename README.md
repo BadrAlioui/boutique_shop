@@ -242,6 +242,25 @@ Ensure you have the following installed:
 
 ---
 
+### Profile Page
+![Edit Profile Page](/images/profile_page.png)
+
+---
+
+### Register Page
+![Edit Profile Page](/images/register_page.png)
+
+---
+
+---
+
+### Change Password Page
+
+![Edit Profile Page](/images/change_password_page.png)
+
+---
+
+
 ## wireframes
 
 ![wireframes](/images/wireframe-boutique.png)
