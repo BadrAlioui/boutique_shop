@@ -556,7 +556,7 @@ Lighthouse tests ensured high accessibility scores:
 
 ![mobile](/images/mobile_lighthouse.png)
 
-- **Desktop Accessibility**: Scored above 95%.
+- **Desktop Accessibility**: Scored above 90%.
 
 ![desktop](/images/desktop_lighthouse.png)
 
