@@ -260,6 +260,33 @@ Ensure you have the following installed:
 
 ---
 
+### Delete account
+
+![Edit Profile Page](/images/delete_account.png)
+
+---
+### Delete Review page
+
+![Edit Profile Page](/images/delete_review_page.png)
+
+---
+### Update Review Page
+
+![Edit Profile Page](/images/edit_review_page.png)
+
+---
+### Update Product Page
+
+![Edit Profile Page](/images/edit_product_page.png)
+
+---
+### Delete Product Page
+
+![Edit Profile Page](/images/delete_product_page.png)
+
+---
+
+
 
 ## wireframes
 
