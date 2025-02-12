@@ -41,10 +41,10 @@ class TestForms(TestCase):
     def test_invalid_product_form(self):
         """Ensure an invalid product form is rejected."""
         form = ProductForm(data={
-            'title': '',  # Missing title
+            'title': '',
             'description': 'A product',
-            'price': -5,  # Negative price
-            'stock': -10  # Negative stock
+            'price': -5,
+            'stock': -10
         })
         self.assertFalse(form.is_valid())
         self.assertIn('title', form.errors)
@@ -63,11 +63,11 @@ class TestForms(TestCase):
     def test_invalid_review_form(self):
         """Ensure a review form with an invalid rating is rejected."""
         form = ReviewForm(data={
-            'rating': None,  # Missing rating
+            'rating': None,
             'comment': 'Good'
         })
         self.assertFalse(form.is_valid())
-        self.assertIn('rating', form.errors)  # Ensure rating error exists
+        self.assertIn('rating', form.errors)
 
     def test_valid_refund_form(self):
         """Ensure a valid refund request form is accepted."""
@@ -80,4 +80,4 @@ class TestForms(TestCase):
         """Ensure an empty refund request form is rejected."""
         form = RefundForm(data={})
         self.assertFalse(form.is_valid())
-        self.assertIn('reason', form.errors)  # Ensure reason error exists
+        self.assertIn('reason', form.errors)
