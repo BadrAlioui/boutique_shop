@@ -444,7 +444,7 @@ In addition to our automated tests, we conducted thorough manual testing to ensu
   - We verified that navigation is intuitive, that interactive elements (buttons, links, forms) respond appropriately, and that the site meets accessibility standards.
 
 - **Screenshots:**
-  - Detailed screenshots of key user flows, such as form error messages, successful registration, purchase confirmation, and various UI states, are provided in the [Screenshots](#screenshots) section of this README.
+  - Detailed screenshots of key user flows, such as form error messages, successful registration, purchase confirmation, and various UI states, are provided in the [Screenshots message](#screenshots message) section of this README.
 
 By combining these manual tests with our automated test suite, we ensure a robust and user-friendly experience.
 
