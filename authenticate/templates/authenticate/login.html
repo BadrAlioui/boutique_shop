@@ -1,36 +1,39 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block content %}
 <h2 class="text-center">Login</h2>
-<form method="POST" action="{% url 'login' %}" class="account-form my-4">
+<form method="POST" action="{% url 'login' %}" class="account-form my-4" role="form">
     {% csrf_token %}
-    <div class="col-md-6 offset-md-3 text-center">
-        <div class="form-group">
-            <label for="exampleInputEmail1" class="form-label">Username</label>
-            <input
-                type="text"
-                id="exampleInputEmail1"
-                class="form-control"
-                placeholder="Enter Username"
-                name="username"
-            />
-            <div id="emailHelp" class="form-text">
-                We'll never share your email with anyone else.
+    <div class="col-md-6 offset-md-3">
+        <fieldset>
+            <legend class="visually-hidden">Login Form</legend>
+            <div class="form-group mb-3">
+                <label for="loginUsername" class="form-label">Username</label>
+                <input
+                    type="text"
+                    id="loginUsername"
+                    class="form-control"
+                    placeholder="Enter your username"
+                    name="username"
+                    autocomplete="username"
+                    required
+                />
             </div>
+            <div class="form-group mb-5">
+                <label for="loginPassword" class="form-label">Password</label>
+                <input
+                    type="password"
+                    id="loginPassword"
+                    class="form-control"
+                    placeholder="Enter your password"
+                    name="password"
+                    autocomplete="current-password"
+                    required
+                />
+            </div>
+        </fieldset>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary rounded w-75">Login</button>
         </div>
-        <div class="form-group mb-5">
-            <label for="exampleInputPassword1" class="form-label"
-                >Password</label
-            >
-            <input
-                type="password"
-                id="exampleInputPassword1"
-                class="form-control"
-                placeholder="Enter password"
-                name="password"
-            />
-        </div>
-
-        <button type="submit" class="btn btn-primary rounded w-75">Login</button>
     </div>
 </form>
-
 {% endblock %}
