@@ -823,10 +823,14 @@ Here’s a step-by-step guide on how I did it:
 
 ## Future Enhancements
 
-- **Wishlist Feature**: Allow users to save favorite products.
-- **Product Reviews**: Enable users to leave reviews and ratings.
-- **Multi-Address Support**: Add functionality for multiple shipping addresses.
-- **Order Notifications**: Notify users of order status updates.
+- **Wishlist Feature:** Allow users to save favorite products.
+- **Product Reviews:** Enable users to leave reviews and ratings.
+- **Multi-Address Support:** Add functionality for managing multiple shipping addresses.
+- **Order Notifications:** Notify users of order status updates.
+- **Order Tracking:** Allow users to track their order status so they know when to expect delivery.
+- **Dynamic Delivery Fees:** Calculate delivery fees based on location and order size.
+- **Promo Codes:** Enable the entry of promo codes during checkout and apply valid discounts to the total price.
+
 
 ---
 
