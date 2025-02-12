@@ -448,7 +448,7 @@ In addition to our automated tests, we conducted thorough manual testing to ensu
 
 By combining these manual tests with our automated test suite, we ensure a robust and user-friendly experience.
 
-## Screenshots
+## Screenshots message
 
 ### Registration Form Error Message
 
@@ -457,6 +457,44 @@ By combining these manual tests with our automated test suite, we ensure a robus
 ---
 
 ![Registration Error](/images/registration_error_email.png)
+
+---
+
+### Login Message
+
+![Login Error](/images/login_error.png)
+
+---
+
+![Login success](/images/login_success.png)
+
+---
+
+### Logout message
+
+![Logout success](/images/logout_success.png)
+
+---
+
+### Subscription Newsletter Message
+
+![Newsletter success](/images/message_screenshot_success.png)
+
+---
+
+![Newsletter error](/images/message_error_newslettor.png)
+
+### Update Review Message
+
+---
+
+![Review update success](/images/review_message_success.png)
+
+### Delete Review Message
+
+---
+
+![Review delete success](/images/review_delete_success.png)
 
 ---
 
