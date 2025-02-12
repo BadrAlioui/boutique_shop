@@ -425,12 +425,58 @@ By integrating Facebook into my marketing strategy, I aim to connect with potent
 - **CSS Validation**: Passed with clean code.
 - **Python Testing**: High test coverage using Django’s test framework.
 
-### Manual Testing
+## Manual Testing
 
-- User workflows, including registration, login, and profile management, tested successfully.
-- Products and categories load correctly with accurate filtering and sorting.
+In addition to our automated tests, we conducted thorough manual testing to ensure that all aspects of the application work as expected. Our manual testing covered the following key areas:
 
----
+- **Form Validation:**
+  - **Registration & Login Forms:**  
+    We tested that valid data allows successful registration and login, while invalid inputs (such as improperly formatted email addresses or disallowed characters) trigger clear, informative error messages.
+  - **Update & Delete Forms:**  
+    We verified that forms used to update or delete records (e.g., product reviews or user profiles) handle invalid inputs appropriately and display the correct feedback.
+
+- **Purchase Workflow:**
+  - **Complete Checkout Process:**  
+    The entire purchase flow—from browsing products and adding items to the cart, to completing the payment via Stripe—was manually tested. We confirmed that the user receives proper success messages upon completion, and that error messages are shown when issues arise.
+    
+- **User Interface & Accessibility:**
+  - The application was tested across different browsers and devices (desktop, tablet, and mobile) to ensure a consistent and responsive design.
+  - We verified that navigation is intuitive, that interactive elements (buttons, links, forms) respond appropriately, and that the site meets accessibility standards.
+
+- **Screenshots:**
+  - Detailed screenshots of key user flows, such as form error messages, successful registration, purchase confirmation, and various UI states, are provided in the [Screenshots](#screenshots) section of this README.
+
+By combining these manual tests with our automated test suite, we ensure a robust and user-friendly experience.
+
+## Screenshots
+
+### Registration Form Error Message
+![Registration Error](/images/screenshot_registration_error.png)
+
+## Payment Processing with Stripe
+
+Our application leverages Stripe to securely handle payment processing. When a customer initiates a purchase, the following steps occur:
+
+- **Secure Checkout:**  
+  The customer is redirected to a secure Stripe checkout session where they enter their payment details.
+
+- **Transaction Verification:**  
+  Stripe processes the payment and verifies that the transaction is successful.
+
+- **Webhook Confirmation:**  
+  Once the payment is confirmed, Stripe sends a webhook notification to our application. This webhook updates the order status to "Paid" in our system.
+
+- **User Confirmation:**  
+  After receiving the confirmation from Stripe, the customer is shown a success message on the website, assuring them that their payment has been processed successfully.
+
+![Paiement success](/images/message_stripe.png)
+
+![Paiement2 success](/images/message_screenshot_success.png)
+
+This integration ensures a smooth, secure, and reliable checkout experience for our users.
+
+
+
 
 
 ---
