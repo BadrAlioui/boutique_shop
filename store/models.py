@@ -48,7 +48,7 @@ class Product(models.Model):
 class Review(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='reviews')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    rating = models.IntegerField(choices=[(i, i) for i in range(1, 6)])  # Note de 1 à 5
+    rating = models.IntegerField(choices=[(i, i) for i in range(1, 6)])
     comment = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True) 
@@ -65,7 +65,7 @@ class Review(models.Model):
 
 
     def clean(self):
-        if self.rating is None:  # Ajoute cette vérification
+        if self.rating is None:
             raise ValidationError("Rating cannot be empty.")
 
         if not (1 <= self.rating <= 5):
