@@ -31,7 +31,7 @@ class EditProfileForm(forms.ModelForm):
         max_length=255,
         required=False,
         widget=forms.TextInput(attrs={'class': 'form-control',
-                                      'placeholder': 'Enter your shipping address'}),
+                                      'placeholder': 'Your shipping address'}),
     )
 
     class Meta:
@@ -86,7 +86,7 @@ class SignUpForm(UserCreationForm):
         max_length=255,
         required=False,
         widget=forms.TextInput(attrs={"class": "form-control",
-                                      "placeholder": "Enter your shipping address"})
+                                      "placeholder": "Your shipping address"})
     )
     password1 = forms.CharField(
         widget=forms.PasswordInput(attrs={"class": "form-control",
@@ -104,9 +104,8 @@ class SignUpForm(UserCreationForm):
 
     def save(self, commit=True):
         user = super().save(commit=commit)
-        # Vérifier si un profil existe déjà
         profile, created = Profile.objects.get_or_create(user=user)
-        profile.address = self.cleaned_data['address']  # Met à jour l'adresse
+        profile.address = self.cleaned_data['address']
         if commit:
             profile.save()
         return user
