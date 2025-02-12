@@ -4,6 +4,7 @@ from django.contrib import messages
 from .forms import NewsletterForm
 from .models import NewsletterSubscriber
 
+
 def subscribe_newsletter(request):
     if request.method == "POST":
         form = NewsletterForm(request.POST)
@@ -11,17 +12,16 @@ def subscribe_newsletter(request):
             email = form.cleaned_data['email']
             if not NewsletterSubscriber.objects.filter(email=email).exists():
                 form.save()
-                
+
                 # Envoi de l'email
                 send_mail(
                     'Welcome to our Newsletter!',
-                    'Thank you for subscribing to our newsletter. Stay tuned for updates!',
+                    'Thank you for subscribing to our newsletter!',
                     'studentinstitute2024@gmail.com',
                     [email],
                     fail_silently=False,
                 )
-                
-                messages.success(request, "You have successfully subscribed to our newsletter!")
+                messages.success(request, "You have successfully subscribed !")
             else:
                 messages.warning(request, "You are already subscribed.")
         else:
