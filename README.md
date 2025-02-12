@@ -478,7 +478,7 @@ By combining these manual tests with our automated test suite, we ensure a robus
 
 ### Subscription Newsletter Message
 
-![Newsletter success](/images/message_screenshot_success.png)
+![Newsletter success](/images/message_success_newsletter.png)
 
 ---
 
