@@ -2,26 +2,27 @@
 
 ![Home Page](/images/responsive.png)
 
-## Table of Contents
 1. [About the Project](#about-the-project)
 2. [Objectives](#objectives)
 3. [Project Overview](#project-overview)
-4. [User Stories & Project Management](#user-stories--project-management)
-5. [Built With](#built-with)
-6. [Database Model](#database-model)
-7. [Bugs Resolved](#bugs-resolved)
-8. [Getting Started](#getting-started)
+4. [Custom Models](#custom-models)
+5. [User Stories & Project Management](#user-stories--project-management)
+6. [Built With](#built-with)
+7. [Database Model](#database-model)
+8. [Bugs Resolved](#bugs-resolved)
+9. [Getting Started](#getting-started)
    - [Prerequisites](#prerequisites)
    - [Installation](#installation)
-9. [Screenshots](#screenshots)
-10. [Wireframes](#wireframes)
-11. [SEO & Marketing](#seo--marketing)
-12. [Testing, Code Quality & Coverage](#testing-code-quality--coverage)
-13. [Accessibility](#accessibility)
-14. [Deployment Guide](#deployment-guide)
-15. [Future Enhancements](#future-enhancements)
-16. [Acknowledgements](#acknowledgements)
-17. [References](#references)
+10. [Screenshots](#screenshots)
+11. [Wireframes](#wireframes)
+12. [SEO & Marketing](#seo--marketing)
+13. [Testing, Code Quality & Coverage](#testing-code-quality--coverage)
+14. [Accessibility](#accessibility)
+15. [Deployment Guide](#deployment-guide)
+16. [Future Enhancements](#future-enhancements)
+17. [Acknowledgements](#acknowledgements)
+18. [References](#references)
+
 
 ---
 
@@ -43,6 +44,34 @@ Boutique-Ecommerce is a user-friendly online store designed to provide a seamles
 ## Project Overview
 
 This Django project is organized into several apps, each handling a specific set of features:
+
+## Custom Models
+
+Our project leverages several custom Django models specifically designed for our e-commerce platform. These models represent the core business entities and enable us to implement tailored functionality and validation rules that meet our unique requirements.
+
+### Key Custom Models
+
+- **Product:**  
+  Manages all details related to a product, such as title, description, price, stock levels, and associated images. It also links products to categories for efficient organization and browsing.
+
+- **Category:**  
+  Organizes products into groups, making it easier for users to filter and find items based on specific themes or collections.
+
+- **Review:**  
+  Allows customers to rate and comment on products, providing valuable feedback to improve the shopping experience.
+
+- **Order:**  
+  Tracks customer orders by storing details such as the purchased product, selected size, a unique order reference, the order date, price, and overall order status. This model is essential for processing transactions and managing the checkout workflow.
+
+- **Refund:**  
+  Handles refund requests by recording key information about the order, the reason for the refund, and its current status.
+
+- **NewsletterSubscriber:**  
+  Stores the email addresses of users who subscribe to our newsletter, enabling us to communicate exclusive offers and updates.
+
+By designing these custom models, we gain complete control over our application's data structure, allowing us to build a robust and scalable e-commerce solution tailored to our business needs.
+
+---
 
 ### Authentication (`authenticate` app)
 - **Features:**
