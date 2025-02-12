@@ -378,6 +378,22 @@ By continuously monitoring our marketing efforts and refining our strategies, we
 
 ---
 
+## Newsletter Signup Form
+
+We have implemented a newsletter signup form that allows users to subscribe for exclusive offers and updates. The form is easily accessible on the homepage and is designed to capture the user's email address.
+
+### How It Works:
+- Users enter their email address in the provided input field.
+- Upon submission, the form sends a request to subscribe the user to the newsletter.
+- A success message is displayed if the subscription is successful.
+
+### Screenshot
+
+Below is a screenshot of the newsletter signup form:
+
+![Newsletter Signup Form](/images/subscription_newsletter.png)
+
+
 ### **Facebook Page for Boutique VitaleVibes**
 
 As part of my content marketing strategy, I created a dedicated Facebook page to promote Boutique VitaleVibes's products and engage with my target audience. This page serves as a platform to showcase the latest offers, share updates, and drive traffic to the website.
