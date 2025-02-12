@@ -419,7 +419,7 @@ By integrating Facebook into my marketing strategy, I aim to connect with potent
 
 ## Testing
 
-### Automated Testing
+### testing with tools
 
 - **HTML Validation**: No errors detected.
 - **CSS Validation**: Passed with clean code.
@@ -668,6 +668,14 @@ Lighthouse tests ensured high accessibility scores:
 - **Desktop Accessibility**: Scored above 90%.
 
 ![desktop](/images/desktop_lighthouse.png)
+
+---
+
+## Testing Overview
+
+Our application has been rigorously tested both manually and with automated tests. Overall, the tests confirm that key functionalities—such as navigation, product management, checkout, user registration, and account management—work as expected.
+
+For a detailed breakdown of our test cases and results, please refer to the [TESTING.md](TESTING.md) file.
 
 ---
 
