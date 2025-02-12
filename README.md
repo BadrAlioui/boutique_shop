@@ -661,15 +661,35 @@ here’s the HTML coverage report:
 
 Lighthouse tests ensured high accessibility scores:
 
-- **Mobile Accessibility**: Scored above 90%.
+- **Desktop Accessibility**:
 
-![mobile](/images/mobile_lighthouse.png)
+#### Home Page Accessibility:
 
-- **Desktop Accessibility**: Scored above 90%.
-
-![desktop](/images/desktop_lighthouse.png)
+![desktop Home Page](/images/desktop_lighthouse.png)
 
 ---
+
+#### Product Page Accessibility:
+
+![desktop Product Page](/images/accessibility_product_page_desktop.png)
+
+---
+
+#### Product Detail Page Accessibility:
+
+![desktop Product Page](/images/accessibility_product_detail_page.png)
+
+---
+
+#### Edit Review Page Accessibility:
+
+![desktop Product Page](/images/accesibility_edit_review.png)
+
+---
+
+#### Delete Review Page Accessibility:
+
+![desktop Product Page](/images/accessibility_delete_review.png)
 
 ## Testing Overview
 

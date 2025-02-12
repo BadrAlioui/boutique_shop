@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Security
 SECRET_KEY = config('SECRET_KEY')
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'boutique-shop-9cbda2d44e62.herokuapp.com']
 
 
