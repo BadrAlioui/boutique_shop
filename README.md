@@ -452,7 +452,7 @@ By combining these manual tests with our automated test suite, we ensure a robus
 
 ### Registration Form Error Message
 
-![Registration Error](/images/register_page.png)
+![Registration Error](/images/registration_error.png)
 
 ---
 
