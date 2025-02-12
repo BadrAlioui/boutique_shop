@@ -1,173 +1,168 @@
-html,
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Lato';
-    box-sizing: border-box;
-    /* height: 100%;
-    width: 100%; */
-    overflow-x: hidden;
-}
+/* Global Styles */
 
-.homepage-main {
-    background: url('/static/media/images/background-image.jpg');
-    background-repeat: no-repeat;
-    /* background-attachment: fixed; */
-    background-size: cover;
-    background-position: center;
-    overflow-x: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    color: white;
-    padding: 0;
-    margin: 0;
-}
-
-.main-class {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    margin: 0 auto;
-}
-
-.container .lead{
-    color:#000000;
-}
-
-.delete-account {
-    
-    margin: 200px auto;
-    min-height: 100%;
-}
-
-
-.account-form,
-.contact-form {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 30px;
-    border-radius: 15px;
-    max-width: 600px;
-    margin: 0 auto;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.account-form label,
-.contact-form label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.paragraph {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.7)
-
-}
-
-
-.rating-text {
-    color: #333; /* Darker text color for better contrast */
-    background-color: #fff; /* White background */
-    opacity: 1;
-}
-
-.edit-button {
-    color: #000; /* Black text for high contrast */
-    background-color: #f0ad4e; /* Existing warning color */
-    opacity: 1; /* Ensure full visibility */
-}
-
-.edit-button:hover {
-    background-color: #ec971f; /* Darker shade for hover state */
-    color: #fff; /* White text for hover */
-}
-
-.delete-button {
-    color: #fff; /* White text for better contrast */
-    background-color: #d9534f; /* Existing Bootstrap danger color */
-    opacity: 1; /* Ensure full visibility */
-}
-
-.delete-button:hover {
-    background-color: #c9302c; /* Slightly darker shade for hover */
-    color: #fff; /* Maintain white text on hover */
-}
-
-
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-  
-  
-/* Card  */
-
-.card {
-    height: 650px; /* Fixe une hauteur uniforme pour toutes les cartes */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Répartit le contenu verticalement */
-    margin-bottom: 20px;
-}
-
-.card-body {
-    flex-grow: 1; /* Permet au contenu de remplir l'espace disponible */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-}
-
-.card-img-top {
-    width: 100%; /* Assure que l'image occupe toute la largeur de la carte */
-    height: 400px; /* Fixe une hauteur pour uniformiser les images */
-    object-fit: cover; /* Coupe l'image pour qu'elle s'adapte à la taille définie */
-    border-radius: 5px 5px 0 0; /* Donne un arrondi aux coins supérieurs */
-}
-
-.card-footer {
-    text-align: center;
-    margin-top: auto; /* Garde les boutons au bas de la carte */
-}
-
-/* Icones and footer */
-
-.fa-star{
-    color:gold;
-}
-
-.icon a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.icon a:hover {
-    color: #ddd;
-}
-
-footer h3, footer h2 {
-    color: rgb(255, 255, 255);
-    opacity: 1 !important;
-    background-color: rgb(52, 58, 64);
-}
-
+   html,
+   body {
+       margin: 0;
+       padding: 0;
+       font-family: 'Lato', sans-serif;
+       box-sizing: border-box;
+       overflow-x: hidden;
+   }
+   
+   /* Layout & Backgrounds */
+   
+   .homepage-main {
+       background: url('/static/media/images/background-image.jpg') no-repeat center center;
+       background-size: cover;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       min-height: 100vh;
+       color: white;
+       margin: 0;
+       padding: 0;
+   }
+   
+   .main-class {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       min-height: 100vh;
+       margin: 0;
+       padding: 0;
+   }
+   
+   .container {
+       margin: 0 auto;
+   }
+   
+   /* Typography & Text Colors */
+   
+   .container .lead {
+       color: #000000;
+   }
+   
+   .paragraph {
+       color: white;
+       background-color: rgba(0, 0, 0, 0.7);
+   }
+   
+   /* Forms & Account/Contact Section */
+   
+   .account-form,
+   .contact-form {
+       background-color: rgba(255, 255, 255, 0.8);
+       padding: 30px;
+       border-radius: 15px;
+       max-width: 600px;
+       margin: 0 auto;
+       box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+       display: flex;
+       flex-direction: column;
+       gap: 15px;
+       width: 100%;
+       box-sizing: border-box;
+   }
+   
+   .account-form label,
+   .contact-form label {
+       display: block;
+       font-weight: bold;
+       margin-bottom: 5px;
+   }
+   
+   /* Buttons */
+   
+   .edit-button {
+       color: #000;
+       background-color: #f0ad4e;
+       opacity: 1;
+   }
+   
+   .edit-button:hover {
+       background-color: #ec971f;
+       color: #fff;
+   }
+   
+   .delete-button {
+       color: #fff;
+       background-color: #d9534f;
+       opacity: 1;
+   }
+   
+   .delete-button:hover {
+       background-color: #c9302c;
+       color: #fff;
+   }
+   
+   /* Utility Classes */
+   
+   .visually-hidden {
+       position: absolute;
+       width: 1px;
+       height: 1px;
+       padding: 0;
+       margin: -1px;
+       overflow: hidden;
+       clip: rect(0, 0, 0, 0);
+       white-space: nowrap;
+       border: 0;
+   }
+   
+   .delete-account {
+       margin: 200px auto;
+       min-height: 100%;
+   }
+   
+   /* Card Component */
+   
+   .card {
+       height: 650px;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+       margin-bottom: 20px;
+   }
+   
+   .card-body {
+       flex-grow: 1;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+       text-align: center;
+   }
+   
+   .card-img-top {
+       width: 100%;
+       height: 400px;
+       object-fit: cover;
+       border-radius: 5px 5px 0 0;
+   }
+   
+   .card-footer {
+       text-align: center;
+       margin-top: auto;
+   }
+   
+   /* Icons & Footer */
+   
+   .fa-star {
+       color: gold;
+   }
+   
+   .icon a {
+       text-decoration: none;
+       color: inherit;
+   }
+   
+   .icon a:hover {
+       color: #ddd;
+   }
+   
+   footer h3,
+   footer h2 {
+       color: #ffffff;
+       opacity: 1 !important;
+       background-color: #343a40;
+   }
+   
