@@ -10,18 +10,19 @@
 6. [Built With](#built-with)
 7. [Database Model](#database-model)
 8. [Bugs Resolved](#bugs-resolved)
-9. [Getting Started](#getting-started)
+9. [Custom 404 Error Page](#custom-404-error-page)
+10. [Getting Started](#getting-started)
    - [Prerequisites](#prerequisites)
    - [Installation](#installation)
-10. [Screenshots](#screenshots)
-11. [Wireframes](#wireframes)
-12. [SEO & Marketing](#seo--marketing)
-13. [Testing, Code Quality & Coverage](#testing-code-quality--coverage)
-14. [Accessibility](#accessibility)
-15. [Deployment Guide](#deployment-guide)
-16. [Future Enhancements](#future-enhancements)
-17. [Acknowledgements](#acknowledgements)
-18. [References](#references)
+11. [Screenshots](#screenshots)
+12. [Wireframes](#wireframes)
+13. [SEO & Marketing](#seo--marketing)
+14. [Testing, Code Quality & Coverage](#testing-code-quality--coverage)
+15. [Accessibility](#accessibility)
+16. [Deployment Guide](#deployment-guide)
+17. [Future Enhancements](#future-enhancements)
+18. [Acknowledgements](#acknowledgements)
+19. [References](#references)
 
 
 ---
@@ -178,6 +179,13 @@ The database model was designed using [drawsql](https://drawsql.app/). We use SQ
 - **Solution:** Ran:
   ```bash
   python manage.py collectstatic```
+
+
+---
+
+## Custom 404 Error Page
+
+A custom 404 error page has been implemented to enhance the user experience when a page is not found. This page maintains the site's design and provides guidance to help users navigate back to valid sections of the website.
 
 
 ---
@@ -821,8 +829,8 @@ Here’s a step-by-step guide on how I did it:
 
 ## Acknowledgements
 
-- **Code Institute**: For the structured learning experience and project guidelines.
-- **My Mentor**: For valuable feedback and guidance.
+- **Code Institute with the tutor Marko**: For the structured learning experience and project guidelines.
+- **My Mentor Marcel**: For valuable feedback and guidance.
 - **Django Documentation**: For clear and detailed references.
 - **Community Support**: For providing tips and answering questions.
 
@@ -833,3 +841,5 @@ Here’s a step-by-step guide on how I did it:
 - [Django Documentation](https://docs.djangoproject.com/)
 - [Bootstrap Documentation](https://getbootstrap.com/)
 - [Stripe API Documentation](https://stripe.com/docs)
+- Photos sourced from Amazon Pexels
+- Project inspiration and guidance from Code Institute courses and Udemy
