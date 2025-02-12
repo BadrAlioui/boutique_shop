@@ -451,7 +451,14 @@ By combining these manual tests with our automated test suite, we ensure a robus
 ## Screenshots
 
 ### Registration Form Error Message
-![Registration Error](/images/screenshot_registration_error.png)
+
+![Registration Error](/images/register_page.png)
+
+---
+
+![Registration Error](/images/registration_error_email.png)
+
+---
 
 ## Payment Processing with Stripe
 
@@ -470,6 +477,8 @@ Our application leverages Stripe to securely handle payment processing. When a c
   After receiving the confirmation from Stripe, the customer is shown a success message on the website, assuring them that their payment has been processed successfully.
 
 ![Paiement success](/images/message_stripe.png)
+
+---
 
 ![Paiement2 success](/images/message_screenshot_success.png)
 
