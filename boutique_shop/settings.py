@@ -129,17 +129,15 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'studentinstitute2024@gmail.com'
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = 'studentinstitute2024@gmail.com'
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_FROM_EMAIL = config('EMAIL_HOST_USER')
 
 # Cloudinary
 cloudinary.config(
-    cloud_name="dbi9dhanq",
-    api_key="778114457955977",
-    api_secret="GytK3sofNmLZxc3ma8w8rZ-gTDk",
+    cloud_name=config("CLOUDINARY_CLOUD_NAME"),
+    api_key=config("CLOUDINARY_API_KEY"),
+    api_secret=config("CLOUDINARY_API_SECRET"),
 )
 
 # Chargez les clés Stripe depuis les variables d'environnement
